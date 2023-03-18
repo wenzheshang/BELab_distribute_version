@@ -1,0 +1,45 @@
+Translation of <a href="Modelica://Vadilation.vadilation">Vadilation.vadilation</a>:
+The DAE has 406 scalar unknowns and 406 scalar equations.
+Warning: The initial conditions are not fully specified.
+Dymola has selected default initial conditions.
+Warning: Assuming fixed start value for the continuous states:
+    CFD_roo.air.vol.dynBal.mXi[1](start = CFD_roo.air.vol.dynBal.fluidVolume*      CFD_roo.air.vol.dynBal.rho_start*CFD_roo.air.vol.dynBal.X_start[1])
+    CFD_roo.air.vol.dynBal.U(start = CFD_roo.air.vol.dynBal.fluidVolume*      CFD_roo.air.vol.dynBal.rho_start*(smooth(5, 1006.0*((CFD_roo.air.vol.dynBal.T_start      -273.15)*(1-CFD_roo.air.vol.dynBal.X_start[1]))+(2501014.5+1860*(      CFD_roo.air.vol.dynBal.T_start-273.15))*CFD_roo.air.vol.dynBal.X_start[1])      -84437.5))
+
+
+Statistics
+
+Original Model
+  Number of components: 199
+  Variables: 2239
+  Constants: 80 (84 scalars)
+  Parameters: 1784 (1904 scalars)
+  Unknowns: 375 (418 scalars)
+  Differentiated variables: 3 scalars
+  Equations: 361
+  Nontrivial: 323
+Translated Model
+  Constants: 1090 scalars
+  Free parameters: 245 scalars
+  Parameter depending: 795 scalars
+  Continuous time states: 2 scalars
+  Time-varying variables: 44 scalars
+  Alias variables: 232 scalars
+  Assumed default initial conditions: 2
+  Number of mixed real/discrete systems of equations: 0
+  Sizes of linear systems of equations: { }
+  Sizes after manipulation of the linear systems: { }
+  Sizes of nonlinear systems of equations: { }
+  Sizes after manipulation of the nonlinear systems: { }
+  Number of numerical Jacobians: 0
+  Initialization problem
+    Sizes of linear systems of equations: {12}
+    Sizes after manipulation of the linear systems: {6}
+
+Selected continuous time states
+Statically selected continuous time states
+  CFD_roo.air.vol.dynBal.mXi[1]
+  CFD_roo.air.vol.dynBal.U
+
+Warning: WARNINGS have been issued.
+ = true, {}

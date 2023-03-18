@@ -1,0 +1,14 @@
+
+ Domain Extents:
+   x-coordinate: min (m) = -1.000000e+00, max (m) = 0.000000e+00
+   y-coordinate: min (m) = 0.000000e+00, max (m) = 1.000000e+00
+   z-coordinate: min (m) = 0.000000e+00, max (m) = 1.000418e+00
+ Volume statistics:
+   minimum volume (m3): 1.335127e-05
+   maximum volume (m3): 1.735979e-05
+     total volume (m3): 1.000418e+00
+ Face area statistics:
+   minimum face area (m2): 5.058170e-04
+   maximum face area (m2): 7.019345e-04
+ Checking mesh...........................
+Done.

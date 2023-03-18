@@ -1,0 +1,164 @@
+
+              Welcome to ANSYS Fluent 2020 R2
+
+              Copyright 1987-2020 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 29 2020 07:22:43 EDT  Build Id: 10176  
+ 
+
+*********************************************
+Info: Your license enables 4-way parallel execution.
+For faster simulations, please start the application with the appropriate parallel options.
+*********************************************
+
+Host spawning Node 0 on machine "wenzheshang" (win64).
+
+-------------------------------------------------------------------------------
+ID    Hostname     Core  O.S.         PID    Vendor                     
+-------------------------------------------------------------------------------
+n0    wenzheshang  1/12  Windows-x64  7048   Intel(R) Core(TM) i7-8750H 
+host  wenzheshang        Windows-x64  10252  Intel(R) Core(TM) i7-8750H 
+
+MPI Option Selected: intel
+-------------------------------------------------------------------------------
+
+Cleanup script file is f:\\Thinking\\program\\BELab1.0\\Workdata\\Fluent_Python\\2023-02-17_20-17\\cleanup-fluent-wenzheshang-10252.bat
+
+Opening wrapper library "F:\\ANASYS\\ANSYS Inc\\v202\\fluent/../commonfiles/AAS/bin/winx64/COWrapper.dll"...
+
+Done.
+Loading "F:/ANASYS/ANSYS Inc/v202/fluent/../commonfiles/AAS/bin/winx64/cowrapper.scm"
+Done.
+(define (aaslistener-func iter time-step) (display "<aaslistener> 
+") '() )aaslistener-func
+(define (aaslistener-func-freq) 1)aaslistener-func-freq
+(register-solution-monitor 'aaslistener-func aaslistener-func #f aaslistener-func-freq)monitor-lambdas
+(rpsetvar 'co-simulation/ior_ICoFluentUnit "IOR:010000002000000049444c3a4141535f434f5242412f49436f466c75656e74556e69743a312e3000020000000000000070000000010102000f0000003137322e32332e3139342e31383500002afe00001b00000014010f005253545b70ef63b57e020001000000010000000200000000020000000000000008000000014588e5004f41540100000018000000010000000100010001000000010001050901010000000000000000006c000000010102000b0000003137322e31372e302e3100312afe00001b00000014010f005253545b70ef63b57e02000100000001000000020000000202000000000000000800000001000000004f41540100000018000000010000000100010001000000010001050901010000000000")co-simulation/ior_icofluentunit
+(rp-var-define 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e3000020000000000000070000000010102000f0000003137322e32332e3139342e313835000028fe00001b00000014010f005253545b70ef63dd7a02000000000001000000010000000002000000000000000800000001013586004f41540100000018000000010135860100010001000000010001050901010000000000000000006c000000010102000b0000003137322e31372e302e31003128fe00001b00000014010f005253545b70ef63dd7a02000000000001000000010000000102000000000000000800000001013586004f41540100000018000000010135860100010001000000010001050901010000000000" 'string #f)co-simulation/ior_exceptionholder
+(rpsetvar 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e3000020000000000000070000000010102000f0000003137322e32332e3139342e313835000028fe00001b00000014010f005253545b70ef63dd7a02000000000001000000010000000002000000000000000800000001013586004f41540100000018000000010135860100010001000000010001050901010000000000000000006c000000010102000b0000003137322e31372e302e31003128fe00001b00000014010f005253545b70ef63dd7a02000000000001000000010000000102000000000000000800000001013586004f41540100000018000000010135860100010001000000010001050901010000000000")co-simulation/ior_exceptionholder
+
+> 
+Reading "F:/Thinking/mesh/vadilation/roomesh.msh"...
+
+Buffering for file scan...
+
+   59319 nodes, binary.
+    9602 nodes, binary.
+  187200 quadrilateral interior faces, zone  1, binary.
+    1600 quadrilateral wall faces, zone  5, binary.
+    1600 quadrilateral wall faces, zone  6, binary.
+     160 quadrilateral velocity-inlet faces, zone  7, binary.
+     160 quadrilateral pressure-outlet faces, zone  8, binary.
+    1600 quadrilateral wall faces, zone  9, binary.
+    1600 quadrilateral wall faces, zone 10, binary.
+    1440 quadrilateral wall faces, zone 11, binary.
+    1440 quadrilateral wall faces, zone 12, binary.
+   64000 hexahedral cells, zone  4, binary.
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+     zones,
+	wall-front
+	wall-back
+	wall-left
+	wall-right
+	outlet
+	inlet
+	floor
+	ceiling
+	cell-fuild
+	interior-cell-fuild
+     parallel,
+Done.
+
+Preparing mesh for display...
+Done.
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/wallwall-front invalid command [wallwall-front]
+0 no 0 no yes temperature no 283.15/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/wallwall-back invalid command [wallwall-back]
+0 no 0 no yes temperature no 283.15/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/wallwall-left invalid command [wallwall-left]
+0 no 0 no yes temperature no 283.15/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/wallwall-right invalid command [wallwall-right]
+0 no 0 no yes temperature no 283.15/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/outflowoutletinvalid command [outflowoutlet]
+/solve/initialize/compute-defaults/all-zonessolve iterate 1000
+Initialize using the hybrid initialization method.
+
+Checking case topology... 
+-This case has both inlets & outlets 
+-Pressure information is not available at the boundaries.
+ Case will be initialized with constant pressure
+
+	iter		scalar-0
+
+	1		0.000000e+00
+	2		0.000000e+00
+	3		0.000000e+00
+	4		0.000000e+00
+	5		0.000000e+00
+	6		0.000000e+00
+	7		0.000000e+00
+	8		0.000000e+00
+	9		0.000000e+00
+	10		0.000000e+00
+
+Hybrid initialization is done.
+<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+        Negative k in 15956 cells after linear solve.
+        All neighbors negative on 86 cells.
+<aaslistener> 
+!    1 solution is converged
+     1  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:49:57  999
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/outflowoutletinvalid command [outflowoutlet]
+/solve/initialize/compute-defaults/all-zonessolve iterate 1000<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+!    1 solution is converged
+     1  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:50:00 1000
+
+ Reversed flow on 86 faces (53.7% area) of pressure-outlet 8.
+<aaslistener> 
+!    2 solution is converged
+     2  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:49:57  999
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/outflowoutletinvalid command [outflowoutlet]
+/solve/initialize/compute-defaults/all-zonessolve iterate 1000<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+!    2 solution is converged
+     2  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:50:00 1000
+
+ Reversed flow on 86 faces (53.7% area) of pressure-outlet 8.
+<aaslistener> 
+!    3 solution is converged
+     3  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:46:37  999
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/outflowoutletinvalid command [outflowoutlet]
+/solve/initialize/compute-defaults/all-zonessolve iterate 1000<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+!    3 solution is converged
+     3  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:46:40 1000
+
+ Reversed flow on 89 faces (55.6% area) of pressure-outlet 8.
+<aaslistener> 
+!    4 solution is converged
+     4  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:47:17  999
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/outflowoutletinvalid command [outflowoutlet]
+/solve/initialize/compute-defaults/all-zonessolve iterate 1000<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+!    4 solution is converged
+     4  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:47:20 1000
+
+ Reversed flow on 105 faces (65.6% area) of pressure-outlet 8.
+<aaslistener> 
+!    5 solution is converged
+     5  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:47:49  999

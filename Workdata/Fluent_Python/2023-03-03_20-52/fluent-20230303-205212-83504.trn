@@ -1,0 +1,252 @@
+
+              Welcome to ANSYS Fluent 2020 R2
+
+              Copyright 1987-2020 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 29 2020 07:22:43 EDT  Build Id: 10176  
+ 
+
+*********************************************
+Info: Your license enables 4-way parallel execution.
+For faster simulations, please start the application with the appropriate parallel options.
+*********************************************
+
+Host spawning Node 0 on machine "wenzheshang" (win64).
+
+-------------------------------------------------------------------------------
+ID    Hostname     Core  O.S.         PID    Vendor                     
+-------------------------------------------------------------------------------
+n0    wenzheshang  1/12  Windows-x64  82632  Intel(R) Core(TM) i7-8750H 
+host  wenzheshang        Windows-x64  85492  Intel(R) Core(TM) i7-8750H 
+
+MPI Option Selected: intel
+-------------------------------------------------------------------------------
+
+Cleanup script file is f:\\Thinking\\program\\BELab1.0\\Workdata\\Fluent_Python\\2023-03-03_20-52\\cleanup-fluent-wenzheshang-85492.bat
+
+Opening wrapper library "F:\\ANASYS\\ANSYS Inc\\v202\\fluent/../commonfiles/AAS/bin/winx64/COWrapper.dll"...
+
+Done.
+Loading "F:/ANASYS/ANSYS Inc/v202/fluent/../commonfiles/AAS/bin/winx64/cowrapper.scm"
+Done.
+(define (aaslistener-func iter time-step) (display "<aaslistener> 
+") '() )aaslistener-func
+(define (aaslistener-func-freq) 1)aaslistener-func-freq
+(register-solution-monitor 'aaslistener-func aaslistener-func #f aaslistener-func-freq)monitor-lambdas
+(rpsetvar 'co-simulation/ior_ICoFluentUnit "IOR:010000002000000049444c3a4141535f434f5242412f49436f466c75656e74556e69743a312e3000020000000000000070000000010102e00f0000003137322e32332e3139342e3138350000a28300001b00000014010f0052535493ed0164206901000100000001000000020000000002000000000000000800000001000000004f41540100000018000000010000000100010001000000010001050901010000000000000000006c000000010102e00c0000003139322e3136382e302e3100a28300001b00000014010f0052535493ed0164206901000100000001000000020000000202000000000000000800000001000000004f41540100000018000000010000000100010001000000010001050901010000000000")co-simulation/ior_icofluentunit
+(rp-var-define 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e3000020000000000000070000000010102000f0000003137322e32332e3139342e3138350000a08300001b00000014010f0052535493ed0164166501000000000001000000010000000002000000000000000800000001018fe6004f4154010000001800000001018fe60100010001000000010001050901010000000000000000006c000000010102000c0000003139322e3136382e302e3100a08300001b00000014010f0052535493ed0164166501000000000001000000010000000102000000000000000800000001018fe6004f4154010000001800000001018fe60100010001000000010001050901010000000000" 'string #f)co-simulation/ior_exceptionholder
+(rpsetvar 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e3000020000000000000070000000010102000f0000003137322e32332e3139342e3138350000a08300001b00000014010f0052535493ed0164166501000000000001000000010000000002000000000000000800000001018fe6004f4154010000001800000001018fe60100010001000000010001050901010000000000000000006c000000010102000c0000003139322e3136382e302e3100a08300001b00000014010f0052535493ed0164166501000000000001000000010000000102000000000000000800000001018fe6004f4154010000001800000001018fe60100010001000000010001050901010000000000")co-simulation/ior_exceptionholder
+
+> 
+Reading "F:/Thinking/mesh/vadilation/roomesh.msh"...
+
+Buffering for file scan...
+
+   59319 nodes, binary.
+    9602 nodes, binary.
+  187200 quadrilateral interior faces, zone  1, binary.
+    1600 quadrilateral wall faces, zone  5, binary.
+    1600 quadrilateral wall faces, zone  6, binary.
+     160 quadrilateral velocity-inlet faces, zone  7, binary.
+     160 quadrilateral pressure-outlet faces, zone  8, binary.
+    1600 quadrilateral wall faces, zone  9, binary.
+    1600 quadrilateral wall faces, zone 10, binary.
+    1440 quadrilateral wall faces, zone 11, binary.
+    1440 quadrilateral wall faces, zone 12, binary.
+   64000 hexahedral cells, zone  4, binary.
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+     zones,
+	wall-front
+	wall-back
+	wall-left
+	wall-right
+	outlet
+	inlet
+	wall-floor
+	wall-ceiling
+	cell-fuild
+	interior-cell-fuild
+     parallel,
+Done.
+
+Preparing mesh for display...
+Done.
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/mesh/scale 0.01 0.01 0.01/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-front 0 no 0 no yes temperature no 283.15/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-back 0 no 0 no yes temperature no 283.15/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-left 0 no 0 no yes temperature no 283.15/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-right 0 no 0 no yes temperature no 283.15/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-ceiling 0 no 0 no yes temperature no 283.15/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-floor 0 no 0 no yes temperature no 303.15/define/boundary/zone-type outlet outflow/solve/initialize/compute-defaults/all-zonessolve iterate 100
+Initialize using the hybrid initialization method.
+
+Checking case topology... 
+-This case has both inlets & outlets 
+-Pressure information is not available at the boundaries.
+ Case will be initialized with constant pressure
+
+	iter		scalar-0
+
+	1		0.000000e+00
+	2		0.000000e+00
+	3		0.000000e+00
+	4		0.000000e+00
+	5		0.000000e+00
+	6		0.000000e+00
+	7		0.000000e+00
+	8		0.000000e+00
+	9		0.000000e+00
+	10		0.000000e+00
+
+Hybrid initialization is done.
+<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+     1  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  8.7038e-05  0.0000e+00  0.0000e+00  0:03:18   99
+<aaslistener> 
+     2  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  5.1953e-04  0.0000e+00  0.0000e+00  0:02:56   98
+
+ reversed flow in 112 faces on outflow 8. 
+<aaslistener> 
+     3  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  1.3887e-04  0.0000e+00  0.0000e+00  0:02:58   97
+
+ reversed flow in 77 faces on outflow 8. 
+<aaslistener> 
+     4  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  3.8990e-05  0.0000e+00  0.0000e+00  0:03:00   96
+
+ reversed flow in 91 faces on outflow 8. 
+<aaslistener> 
+     5  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  1.1985e-05  0.0000e+00  0.0000e+00  0:02:41   95
+
+ reversed flow in 71 faces on outflow 8. 
+<aaslistener> 
+     6  1.0787e-19  4.8711e-02  1.2733e-01  1.0121e-01  3.6022e-06  2.1363e-05  8.7543e-03  0:02:26   94
+
+ reversed flow in 77 faces on outflow 8. 
+<aaslistener> 
+     7  7.0781e-20  2.0793e-02  7.9665e-02  4.4854e-02  1.0737e-06  1.1337e-05  6.5081e-03  0:02:33   93
+
+ reversed flow in 115 faces on outflow 8. 
+<aaslistener> 
+     8  4.3594e-20  1.6513e-02  5.9803e-02  3.3959e-02  3.4627e-07  5.1814e-06  5.3304e-03  0:02:20   92
+
+ reversed flow in 93 faces on outflow 8. 
+<aaslistener> 
+     9  2.5320e-20  1.3190e-02  4.3502e-02  2.5524e-02  1.1062e-07  2.2474e-06  4.6978e-03  0:02:27   91
+
+ reversed flow in 105 faces on outflow 8. 
+<aaslistener> 
+    10  1.5335e-20  1.1252e-02  2.9330e-02  1.7680e-02  3.4672e-08  9.6970e-07  4.2463e-03  0:02:32   90
+
+ reversed flow in 103 faces on outflow 8. 
+<aaslistener> 
+    11  1.0615e-19  4.5847e-03  6.0690e-03  7.4620e-03  1.0620e-08  4.5719e-07  4.0026e-03  0:02:36   89
+
+ reversed flow in 78 faces on outflow 8. 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    12  5.3447e-20  3.9390e-03  5.2413e-03  6.5181e-03  4.9710e-09  2.2439e-07  3.7921e-03  0:02:21   88
+
+ reversed flow in 79 faces on outflow 8. 
+        Stabilizing pressure coupled to enhance linear solver robustness.
+<aaslistener> 
+    13  3.0548e-20  4.1744e-03  5.1539e-03  6.4480e-03  6.7898e-09  1.4399e-07  3.5733e-03  0:02:26   87
+
+ reversed flow in 89 faces on outflow 8. 
+<aaslistener> 
+    14  1.8677e-20  3.7825e-03  4.3429e-03  5.3541e-03  9.7403e-09  1.2165e-07  3.2875e-03  0:02:13   86
+
+ reversed flow in 86 faces on outflow 8. 
+<aaslistener> 
+    15  2.2225e-19  2.4994e-02  1.8960e-02  2.3036e-02  9.4031e-09  1.1061e-07  2.8482e-03  0:02:02   85
+
+ reversed flow in 79 faces on outflow 8. 
+        Stabilizing pressure coupled to enhance linear solver robustness.
+<aaslistener> 
+    16  1.0373e-19  1.8426e-02  1.4685e-02  1.7881e-02  6.9022e-09  1.0201e-07  2.2224e-03  0:01:53   84
+
+ reversed flow in 93 faces on outflow 8. 
+<aaslistener> 
+    17  5.3609e-20  1.3542e-02  1.0746e-02  1.3079e-02  4.5824e-09  9.5114e-08  1.6221e-03  0:01:46   83
+
+ reversed flow in 102 faces on outflow 8. 
+        Stabilizing pressure coupled to enhance linear solver robustness.
+<aaslistener> 
+    18  3.1499e-20  1.1988e-02  9.7571e-03  1.1687e-02  2.8194e-09  8.9533e-08  1.2796e-03  0:01:57   82
+
+ reversed flow in 89 faces on outflow 8. 
+        Stabilizing pressure coupled to enhance linear solver robustness.
+<aaslistener> 
+    19  1.7421e-20  7.8695e-03  6.7773e-03  7.7016e-03  1.4258e-09  8.4978e-08  1.1458e-03  0:01:48   81
+
+ reversed flow in 101 faces on outflow 8. 
+        Stabilizing pressure coupled to enhance linear solver robustness.
+<aaslistener> 
+    20  1.1044e-20  6.2224e-03  6.2007e-03  6.4092e-03  6.4705e-10  8.1230e-08  1.0850e-03  0:01:42   80
+
+ reversed flow in 88 faces on outflow 8. 
+<aaslistener> 
+    21  6.8442e-21  4.7493e-03  4.7692e-03  4.5409e-03  3.5644e-10  7.8112e-08  1.0458e-03  0:01:36   79
+
+ reversed flow in 82 faces on outflow 8. 
+        Stabilizing pressure coupled to enhance linear solver robustness.
+<aaslistener> 
+    22  7.1832e-21  7.2571e-03  5.9881e-03  6.0319e-03  2.0817e-10  7.5488e-08  1.0176e-03  0:01:32   78
+
+ reversed flow in 102 faces on outflow 8. 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    23  7.2002e-21  7.7493e-03  6.1092e-03  6.0897e-03  1.3036e-10  7.3253e-08  9.9563e-04  0:01:58   77
+
+ reversed flow in 102 faces on outflow 8. 
+<aaslistener> 
+    24  2.3812e-20  2.2464e-02  1.5392e-02  1.5330e-02  8.4432e-11  7.1322e-08  9.7740e-04  0:01:49   76
+
+ reversed flow in 117 faces on outflow 8. 
+        Stabilizing pressure coupled to enhance linear solver robustness.
+<aaslistener> 
+    25  1.1651e-20  1.8899e-02  1.2477e-02  1.2611e-02  5.5861e-11  6.9630e-08  9.6151e-04  0:01:41   75
+
+ reversed flow in 125 faces on outflow 8. 
+        Stabilizing pressure coupled to enhance linear solver robustness.
+<aaslistener> 
+    26  5.8920e-21  1.0914e-02  7.4429e-03  7.4226e-03  3.7766e-11  6.8125e-08  9.4714e-04  0:01:34   74
+
+ reversed flow in 113 faces on outflow 8. 
+<aaslistener> 
+    27  5.9250e-21  1.2121e-02  7.7470e-03  7.4120e-03  2.6257e-11  6.6767e-08  9.3381e-04  0:01:29   73
+
+ reversed flow in 113 faces on outflow 8. 
+<aaslistener> 
+    28  3.1393e-21  6.2788e-03  4.2885e-03  4.2050e-03  1.8932e-11  6.5525e-08  9.2124e-04  0:01:25   72
+
+ reversed flow in 116 faces on outflow 8. 
+<aaslistener> 
+    29  2.0505e-21  6.7572e-03  4.0214e-03  2.7109e-03  1.4722e-11  6.4377e-08  9.0923e-04  0:01:21   71
+
+ reversed flow in 120 faces on outflow 8. 
+<aaslistener> 
+    30  2.0650e-21  7.3884e-03  3.2810e-03  3.3535e-03  1.1757e-11  6.3306e-08  8.9768e-04  0:01:18   70
+
+ reversed flow in 117 faces on outflow 8. 
+<aaslistener> 
+    31  3.4989e-21  1.5265e-02  6.1126e-03  6.8844e-03  9.7448e-12  6.2298e-08  8.8651e-04  0:01:15   69
+
+ reversed flow in 119 faces on outflow 8. 
+<aaslistener> 
+    32  1.3660e-19  4.7253e-03  6.8361e-03  5.6943e-03  8.3942e-12  6.1343e-08  8.7567e-04  0:01:13   68
+
+ reversed flow in 88 faces on outflow 8. 
+<aaslistener> 
+    33  6.4173e-20  3.8266e-03  5.0402e-03  4.5119e-03  7.7109e-12  6.0433e-08  8.6512e-04  0:01:11   67

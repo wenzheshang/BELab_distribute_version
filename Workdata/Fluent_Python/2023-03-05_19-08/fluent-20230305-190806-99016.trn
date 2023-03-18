@@ -1,0 +1,183 @@
+
+              Welcome to ANSYS Fluent 2020 R2
+
+              Copyright 1987-2020 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 29 2020 07:22:43 EDT  Build Id: 10176  
+ 
+
+*********************************************
+Info: Your license enables 4-way parallel execution.
+For faster simulations, please start the application with the appropriate parallel options.
+*********************************************
+
+Host spawning Node 0 on machine "wenzheshang" (win64).
+
+-------------------------------------------------------------------------------
+ID    Hostname     Core  O.S.         PID     Vendor                     
+-------------------------------------------------------------------------------
+n0    wenzheshang  1/12  Windows-x64  101632  Intel(R) Core(TM) i7-8750H 
+host  wenzheshang        Windows-x64  105480  Intel(R) Core(TM) i7-8750H 
+
+MPI Option Selected: intel
+-------------------------------------------------------------------------------
+
+Cleanup script file is f:\\Thinking\\program\\BELab1.0\\Workdata\\Fluent_Python\\2023-03-05_19-08\\cleanup-fluent-wenzheshang-105480.bat
+
+Opening wrapper library "F:\\ANASYS\\ANSYS Inc\\v202\\fluent/../commonfiles/AAS/bin/winx64/COWrapper.dll"...
+
+Done.
+Loading "F:/ANASYS/ANSYS Inc/v202/fluent/../commonfiles/AAS/bin/winx64/cowrapper.scm"
+Done.
+(define (aaslistener-func iter time-step) (display "<aaslistener> 
+") '() )aaslistener-func
+(define (aaslistener-func-freq) 1)aaslistener-func-freq
+(register-solution-monitor 'aaslistener-func aaslistener-func #f aaslistener-func-freq)monitor-lambdas
+(rpsetvar 'co-simulation/ior_ICoFluentUnit "IOR:010000002000000049444c3a4141535f434f5242412f49436f466c75656e74556e69743a312e3000020000000000000070000000010102000f0000003137322e32332e3139342e31383500001e0c00001b00000014010f005253542d78046436ff01000100000001000000020000000002000000000000000800000001000000004f41540100000018000000010000000100010001000000010001050901010000000000000000006c000000010102000c0000003139322e3136382e302e31001e0c00001b00000014010f005253542d78046436ff01000100000001000000020000000202000000000000000800000001000000004f41540100000018000000010000000100010001000000010001050901010000000000")co-simulation/ior_icofluentunit
+(rp-var-define 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e3000020000000000000070000000010102000f0000003137322e32332e3139342e31383500001c0c00001b00000014010f005253542d7804644efb01000000000001000000010000000002000000000000000800000001000000004f41540100000018000000010000000100010001000000010001050901010000000000000000006c000000010102000c0000003139322e3136382e302e31001c0c00001b00000014010f005253542d7804644efb010000000000010000000100000001020000000000000008000000011de347004f41540100000018000000010043000100010001000000010001050901010000000000" 'string #f)co-simulation/ior_exceptionholder
+(rpsetvar 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e3000020000000000000070000000010102000f0000003137322e32332e3139342e31383500001c0c00001b00000014010f005253542d7804644efb01000000000001000000010000000002000000000000000800000001000000004f41540100000018000000010000000100010001000000010001050901010000000000000000006c000000010102000c0000003139322e3136382e302e31001c0c00001b00000014010f005253542d7804644efb010000000000010000000100000001020000000000000008000000011de347004f41540100000018000000010043000100010001000000010001050901010000000000")co-simulation/ior_exceptionholder
+
+> 
+Reading "F:/Thinking/mesh/vadilation/roomesh.msh"...
+
+Buffering for file scan...
+
+   59319 nodes, binary.
+    9602 nodes, binary.
+  187200 quadrilateral interior faces, zone  1, binary.
+    1600 quadrilateral wall faces, zone  5, binary.
+    1600 quadrilateral wall faces, zone  6, binary.
+     160 quadrilateral velocity-inlet faces, zone  7, binary.
+     160 quadrilateral pressure-outlet faces, zone  8, binary.
+    1600 quadrilateral wall faces, zone  9, binary.
+    1600 quadrilateral wall faces, zone 10, binary.
+    1440 quadrilateral wall faces, zone 11, binary.
+    1440 quadrilateral wall faces, zone 12, binary.
+   64000 hexahedral cells, zone  4, binary.
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+     zones,
+	wall-front
+	wall-back
+	wall-left
+	wall-right
+	outlet
+	inlet
+	wall-floor
+	wall-ceiling
+	cell-fuild
+	interior-cell-fuild
+     parallel,
+Done.
+
+Preparing mesh for display...
+Done.
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-front 0 no 0 no yes temperature no 283.15/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-back 0 no 0 no yes temperature no 283.15/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-left 0 no 0 no yes temperature no 283.15/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-right 0 no 0 no yes temperature no 283.15/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-ceiling 0 no 0 no yes temperature no 283.15/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-floor 0 no 0 no yes temperature no 303.15/define/boundary/zone-type outlet outflow/define/boundary/velocity-inlet (inlet)
+inlet no no yes yes no 0.8333333333333334 no 0 no 303.15 no no yes 5 10/solve/initialize/compute-defaults/all-zonessolve iterate 100
+Initialize using the hybrid initialization method.
+
+Checking case topology... 
+-This case has both inlets & outlets 
+-Pressure information is not available at the boundaries.
+ Case will be initialized with constant pressure
+
+	iter		scalar-0
+
+	1		1.000000e+00
+	2		1.017806e-05
+	3		9.829491e-07
+	4		9.823473e-08
+	5		9.216920e-09
+	6		8.672313e-10
+	7		8.151888e-11
+	8		7.637622e-12
+	9		8.211758e-13
+	10		9.202023e-14
+
+Hybrid initialization is done.
+<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+     1  1.0000e+00  8.5995e-02  6.5535e-02  4.5683e-05  5.2082e-04  1.3400e-01  1.5051e-01  0:01:39   99
+<aaslistener> 
+     2  6.2589e-01  5.6131e-02  3.6475e-02  1.0947e-04  6.0270e-04  7.7407e-02  1.0479e-01  0:01:58   98
+<aaslistener> 
+     3  5.1916e-01  4.0420e-02  2.3503e-02  1.4087e-04  5.0747e-04  6.0963e-02  1.2843e-01  0:01:53   97
+<aaslistener> 
+     4  6.3899e-01  2.9134e-02  1.5002e-02  1.9156e-04  4.1526e-04  5.3634e-02  1.6383e-01  0:01:48   96
+<aaslistener> 
+     5  7.4335e-01  2.0858e-02  1.0754e-02  2.4292e-04  3.2713e-04  4.9574e-02  1.8198e-01  0:01:45   95
+<aaslistener> 
+     6  7.2645e-01  1.5079e-02  8.6029e-03  2.9787e-04  2.5796e-04  4.2667e-02  1.6795e-01  0:01:42   94
+<aaslistener> 
+     7  6.6918e-01  1.0982e-02  7.2042e-03  3.4621e-04  2.1319e-04  3.5983e-02  1.4003e-01  0:01:39   93
+<aaslistener> 
+     8  6.1740e-01  8.2849e-03  6.1299e-03  3.8849e-04  1.8086e-04  2.8681e-02  1.0623e-01  0:01:37   92
+<aaslistener> 
+     9  5.4962e-01  6.5340e-03  5.1358e-03  4.2594e-04  1.5442e-04  2.1659e-02  7.7318e-02  0:01:35   91
+<aaslistener> 
+    10  4.9792e-01  5.4706e-03  4.1845e-03  4.5782e-04  1.3322e-04  1.5894e-02  5.5872e-02  0:01:33   90
+<aaslistener> 
+    11  4.4983e-01  4.6978e-03  3.3499e-03  4.8733e-04  1.1592e-04  1.1691e-02  3.9937e-02  0:01:31   89
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    12  4.1410e-01  4.0625e-03  2.7102e-03  5.1640e-04  1.0071e-04  8.9098e-03  2.7975e-02  0:01:30   88
+<aaslistener> 
+    13  3.8013e-01  3.4985e-03  2.3686e-03  5.4325e-04  8.7696e-05  7.0005e-03  1.9084e-02  0:01:28   87
+<aaslistener> 
+    14  3.4465e-01  2.9956e-03  2.2284e-03  5.7150e-04  7.6758e-05  6.0502e-03  1.5237e-02  0:01:10   86
+<aaslistener> 
+    15  3.2429e-01  2.5365e-03  2.1315e-03  6.0080e-04  6.7498e-05  5.6760e-03  1.6749e-02  0:01:12   85
+<aaslistener> 
+    16  3.0555e-01  2.1621e-03  2.0578e-03  6.3126e-04  5.9523e-05  5.3687e-03  1.8454e-02  0:01:14   84
+<aaslistener> 
+    17  2.8704e-01  1.8567e-03  1.9714e-03  6.5797e-04  5.3098e-05  5.0624e-03  1.9540e-02  0:01:15   83
+<aaslistener> 
+    18  2.7060e-01  1.6329e-03  1.8625e-03  6.8057e-04  4.7681e-05  4.7408e-03  1.9823e-02  0:01:16   82
+<aaslistener> 
+    19  2.5458e-01  1.4770e-03  1.7370e-03  6.9704e-04  4.2954e-05  4.4111e-03  1.9257e-02  0:01:16   81
+<aaslistener> 
+    20  2.3961e-01  1.3721e-03  1.6047e-03  7.0964e-04  3.8952e-05  4.1201e-03  1.8046e-02  0:01:00   80
+<aaslistener> 
+    21  2.2601e-01  1.3038e-03  1.4728e-03  7.1534e-04  3.5360e-05  3.9043e-03  1.6478e-02  0:01:03   79
+<aaslistener> 
+    22  2.1381e-01  1.2542e-03  1.3525e-03  7.1376e-04  3.2066e-05  3.8067e-03  1.4906e-02  0:01:06   78
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    23  2.0291e-01  1.2178e-03  1.2496e-03  7.0763e-04  2.9006e-05  3.7731e-03  1.3934e-02  0:01:07   77
+<aaslistener> 
+    24  1.9269e-01  1.1839e-03  1.1619e-03  6.9611e-04  2.6253e-05  3.7223e-03  1.3244e-02  0:01:08   76
+<aaslistener> 
+    25  1.8325e-01  1.1459e-03  1.0857e-03  6.7899e-04  2.3992e-05  3.6265e-03  1.2547e-02  0:01:09   75
+<aaslistener> 
+    26  1.7503e-01  1.1074e-03  1.0181e-03  6.5651e-04  2.2184e-05  3.4886e-03  1.1736e-02  0:01:09   74
+<aaslistener> 
+    27  1.6716e-01  1.0688e-03  9.5945e-04  6.2886e-04  2.0651e-05  3.3144e-03  1.0847e-02  0:01:09   73
+<aaslistener> 
+    28  1.5990e-01  1.0291e-03  9.0752e-04  5.9786e-04  1.9321e-05  3.1104e-03  9.9068e-03  0:00:55   72
+<aaslistener> 
+    29  1.5193e-01  9.9059e-04  8.6259e-04  5.6621e-04  1.8126e-05  2.8948e-03  8.9420e-03  0:00:57   71
+<aaslistener> 
+    30  1.4366e-01  9.5386e-04  8.2896e-04  5.3811e-04  1.7069e-05  2.6773e-03  8.0019e-03  0:00:59   70
+<aaslistener> 
+    31  1.3622e-01  9.2390e-04  8.0965e-04  5.1547e-04  1.6161e-05  2.4718e-03  7.1446e-03  0:01:00   69
+<aaslistener> 
+    32  1.2979e-01  9.0374e-04  8.0500e-04  4.9827e-04  1.5504e-05  2.3013e-03  6.4535e-03  0:01:01   68
+<aaslistener> 
+    33  1.2649e-01  8.9310e-04  8.1327e-04  4.8744e-04  1.5160e-05  2.1853e-03  6.0258e-03  0:01:02   67

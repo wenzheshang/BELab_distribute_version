@@ -1,0 +1,294 @@
+BuildingsPy Changelog
+---------------------
+
+Version 4.0.0, May 12, 2022 -- Release 4.0
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Removed JModelica support, and added support for new OPTIMICA compile_fmu API.
+  (https://github.com/lbl-srg/BuildingsPy/pull/480)
+- For simulation and unit tests, updated the API for OPTIMICA to the one used in oct-2022-05-09-master-4b0cd2bf71
+  (https://github.com/lbl-srg/BuildingsPy/issues/479)
+- For simulation, corrected a bug that led to an error message when a model from the Modelica Standard Library is simulated
+  (https://github.com/lbl-srg/BuildingsPy/issues/472)
+- For unit tests, enabled option to run tests with OpenModelica.
+  This change also allows specifying the test configuration in the more concise
+  conf.yml rather than conf.json file.
+  (https://github.com/lbl-srg/BuildingsPy/issues/453)
+- For unit tests, added option to exclude files for dymola in library configuration script.
+  Due to this change, the function regressiontest.setExcludeTest has been removed.
+  (https://github.com/lbl-srg/BuildingsPy/pull/450)
+- For unit tests, added optional colored output.
+  (https://github.com/lbl-srg/BuildingsPy/pull/451)
+
+Version 3.0.0, December 8, 2021 -- Release 3.0
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- For unit tests, changed code to generate names of Dymola output file to ensure that they are unique.
+  Previously, an error was issued if they are not unique.
+  (https://github.com/lbl-srg/BuildingsPy/issues/446)
+- For merge script, renamed set_excluded_packages to set_excluded_directories
+  (https://github.com/lbl-srg/BuildingsPy/issues/439)
+- For Dymola simulations, corrected call to openModel in buildingspy/simulate/Dymola.py
+- For unit tests, avoided copying .log and .mat files to temporary directory
+  (https://github.com/lbl-srg/BuildingsPy/issues/428)
+- For unit tests with Optimica, added check for access to component that are not present in constraining type of declaration
+  (https://github.com/lbl-srg/BuildingsPy/issues/424)
+- For library merger, corrected erroneous replacement of IBPSA in name of issue number
+  (https://github.com/lbl-srg/BuildingsPy/issues/412)
+- For unit tests, set Advanced.GenerateVariableDependencies = false as this can change the set of nonlinear equations
+  (https://github.com/lbl-srg/BuildingsPy/issues/410)
+- Added local relative tolerance along y axis by default
+  (https://github.com/lbl-srg/BuildingsPy/pull/396)
+- Fix rounding error issue on start and stop time values
+  (https://github.com/lbl-srg/BuildingsPy/issues/363)
+- For unit tests, ignore zero-size linear and nonlinear equations when comparing statistics
+  (https://github.com/lbl-srg/BuildingsPy/issues/406)
+- For unit tests, changed warning to an error if start or end times differ from reference results
+  (https://github.com/lbl-srg/BuildingsPy/issues/404)
+- Corrected timeout handling in buildingspy.simulate.base_simulator.py
+  (https://github.com/lbl-srg/BuildingsPy/issues/385)
+- Corrected class name lookup mechanism in buildingspy.development.refactor.move_class()
+  (https://github.com/lbl-srg/BuildingsPy/issues/382)
+- For unit tests, added optional comment that is printed if a model is excluded from
+  the tests (https://github.com/lbl-srg/BuildingsPy/issues/389)
+- Corrected generation of package.order for constant arrays (https://github.com/lbl-srg/BuildingsPy/issues/387)
+- Refactored class buildingspy.simulate.Dymola, and added buildingspy.simulate.Optimica
+- Added check for wrong derivative implementation that is reported by Dymola 2021x (https://github.com/lbl-srg/BuildingsPy/issues/376).
+
+Version 2.1.0, May 28, 2020 -- Release 2.1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Updated dependency to pyfunnel, and added requirements.txt file.
+- For unit tests, display plots before asking to add new reference results. (Issue 344)
+- When writing package.order, preserved the ordering of constants from the .mo file.
+- Changed doctest to Python 3.6.
+- For unit tests, added support for OPTIMICA.
+- For unit tests, changed to non-pedantic mode in Dymola if a model
+  is in the Obsolete package.
+- For unit tests, corrected problem on Windows if a user enabled DDE.
+- For unit tests, corrected problem if a user saved the startup directory in Dymola.
+- Avoided text replace in binary files when merging libraries, which lead to
+  UnicodeDecodeError. (Issue 272)
+- In regression tests, issue error if the name of the reference results
+  is too long. (Issue 274)
+- Added compiler option nle_solver_tol_factor with value of 1e-2 for jmodelica
+  regression test. (Issue 301)
+
+Version 2.0.0, July 15, 2019 -- Release 2.0
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Added handling of library specific comments in buildingspy.development.merger
+- Improved error reporting when running regression tests in batch mode.
+- Corrected bug when creating and then renaming a package with
+  buildingspy.development.refactor
+- Removed buildingspy.simulate.Simulator.simulate_translated
+  as it relies on non-standard Dymola functionality, and does no longer
+  work with Dymola 2019.
+  Also removed is the function buildingspy.simulate.Simulator.deleteTranslateDirectory
+  which was only needed for buildingspy.simulate.Simulator.simulate_translated
+
+Version 1.7.0, June 14, 2018 -- Release 1.7
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Corrected error in buildingspy.development.regressiontest that caused
+  variables in plot statements to be ignored if the plot statement was
+  longer than one line. Now, an error message will be written for this case.
+- Updated buildingspy.development.merger to filter out certain files,
+  such as the top-level .c and .mat files.
+- Updated buildingspy.development.refactor.move_class() to
+  correct a bug that caused package.mo to not be generated
+  if the new class is deeper in the class hierarchy.
+- Updated buildingspy.development.refactor.write_package_order() to
+  correct a bug in generating package.order file for package-level
+  constants.
+- Extend class buildingspy.development.validator
+  to check the consistency and correctness of .mos and .mo files.
+- Added validation of .mos/.mo files to unit test script.
+
+Version 1.6.0, March 29, 2017 -- Release 1.6
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- In development.regressiontest.setSinglePackage(packageName), added
+  option to provide a comma-separated list to allow checking multiple
+  packages.
+- In simulate.Simulator, changed quotes of string arguments for
+  Modelica parameters.
+- In development.regressiontest, added check for redundant connections.
+- Updated buildingspy.development.refactor.move_class()
+  to allow moving whole packages.
+- Updated buildingspy.development.refactor.write_package_order()
+  so that also types that are enumerations are added to the package.order file.
+- Corrected TypeError during parsing of an exception that led to a wrong
+  error message.
+- In regression tests for Dymola, added check for missing stateGraphRoot.
+
+Version 1.5.0, March 29, 2016 -- Release 1.5
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Added module fmi with a function that outputs fmu dependencies.
+- Added regression tests for OpenModelica.
+- Changed implementation of addParameters(...) to allow
+  setting values of parameters that are arrays.
+- Corrected bug that lead to files such as .DStore in Resources/Scripts
+  to be processed as if they were scripts that run unit tests.
+- Added class buildingspy.development.merger, which can be used
+  to merge the Annex60 Modelica library to other Modelica libraries,
+  such as the Buildings library.
+- Corrected bug in copying the files for the unit tests, which
+  caused libpython2.7.so not to be copied on some computers
+- Added method development.include_fmu_tests that allow testing
+  the export of FMUs.
+- development.regressiontest now also reports when Dymola
+  had to select default initial conditions,
+  a model had redundant consistent initial conditions, or
+  a model had type inconsistent definition equations.
+- Corrected bug in simulate.Simulator that caused a syntax error
+  in the Modelica .mos script when setting boolean variables.
+- Changed the API of buildingspy.simulate.Simulator.
+  Previously, the MODELICAPATH was used as the default
+  to load the package.mo file. This was changed because the
+  MODELICAPATH variable points one directory higher than the
+  location of the package.mo file.
+  Now, the current directory is used as the default value, which
+  can be overwritten using the parameter packagePath.
+- Corrected bug in buildingspy.development.regressiontest that
+  only used the first word in the result mat file. This bug
+  caused the unit tests to return with an error if for example
+  an output file was named Obsolete.FlowMachine
+- Corrected bug in buildingspy.development.Validator that
+  caused the html section to be not validated if the Modelica
+  file contained the </html> and <html> element on the same line.
+- Added new module buildingspy.development.refactor that provides
+  functions to refactor Modelica libraries.
+- Corrected forward and backward slashes in module that runs
+  the regression tests.
+- Added new function buildingspy.io.outputfile.get_model_statistics,
+  which allows obtaining the statistics of the model, such as the
+  number of nonlinear equations.
+- Added in buildingspy.development.regressiontest.Tester() the
+  new function writeOpenModelicaResultDictionary() that writes
+  a result dictionary for the OpenModelica regression tests.
+- Added regression tests for FMU export for Dymola.
+- In regression tests, added a check for parameters that only have
+  a start value assigned.
+- In buildingspy.development.regressiontest, added functionality
+  to save Output, InitialUnknown and Derivatives dependency on
+  inputs to the reference results.
+- In buildingspy.development.regressiontest, added option to
+  use pedantic Modelica check.
+- Improved regression tests so that the list of plot variables
+  no longer needed to be on a single line. This was done
+  as later versions of Dymola do not write line breaks when
+  exporting the .mos script.
+- Added option to simulate a Modelica model without recompilation.
+- In buildingspy.development.regressiontest, added tests for
+  differentiation of if-expressions,
+  invalid connect statements,
+  redeclaration of non-replaceable classes,
+  failure to interpret experiment annotation,
+  file not found, and
+  missing .mos script.
+- Corrected html check if the html is on a single line.
+- In buildingspy.development.regressiontest, changed reading of
+  dslog.txt to be line by line as opposed to the whole file at once.
+  The reason is that reading the whole file can give an "out of memory for strings"
+  error for very long files as the size of Stringbuffer in
+  dymola/source/matrixop.h is not dynamically allocated.
+
+
+Version 1.4.0, February 28, 2014 -- Release 1.4
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- In development.unittest, added test that addresses the situation
+  that some results are parameters in the Buildings library, but
+  variables in the Annex 60 library.
+- In simulate.Simulator, corrected error that prevented output
+  files from being copied if the result directory was set to '.'
+- Added unit tests and documentation tests.
+- Corrected various errors in the documentation.
+- Renamed development.unittest to development.regressiontest. This
+  was required for the python doctest to work.
+- In development.regressiontest, added new method setLibraryRoot(rootDir)
+  to allow running the unit tests from a directory other than the library
+  root directory.
+- In development.regressiontest, added a test that avoids an IndexError
+  if a new simulation result contains a different number of support points
+  than the reference result. This is needed if models change variables
+  to parameters or vice versa.
+- In development.regressiontest, added the method setSinglePackage.
+  This allows running the regression tests for a single package only.
+
+
+Version 1.3.0, October 24, 2013 -- Release 1.3
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Added class buildingspy.development.validator
+  that can be used to validate the html syntax
+  of the info section of .mo files.
+- Added validation of html syntax to unit test script.
+- In io.outputfile, changed name of argument of _init__
+  from format to simulator as format is a reserved keyword
+  in Python.
+- In simulate.Simulator, corrected use of variable that was not defined.
+  Avoided use of variable name exit which is a reserved keyword.
+  Avoided the use of temporary variables that are not needed.
+- In development.unittest,
+
+  - removed non-needed import statement,
+  - removed argument dir from method printNumberOfClasses(self)
+    as this argument is not used.
+
+- Updated to latest version of DyMat as on https://github.com/jraedler/DyMat,
+  commit 4e819cb
+- In development.Tester, method __getSimulationResults(),
+  corrected error that caused results only to be stored if there is
+  at least one variable requested for comparison that has more than
+  two support points. That is, if a script only requested to store
+  parameters, or variables that solely depend on parameters,
+  then no results from this simulation were not stored.
+
+
+Version 1.2.0, May 15, 2013 -- Release 1.2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Changed buildingspy.development.unittest so that
+  the string 'svn-id' is no longer searched in,
+  or written to, the reference result files.
+- Improved error reporting of the package that runs
+  the unit tests.
+- Updated buildingspy.development.unittest to allow testing
+  of other libraries than the Buildings library.
+- Updated buildingspy.development.unittest to include
+  a model check in the pedantic mode of Dymola.
+
+
+Version 1.1.2, January 8, 2013 -- Release 1.1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Fixed bug in Simulator.py to allow setting Modelica parameters
+  that are of type string.
+
+
+Version 1.1.1, October 9, 2012 -- Release 1.1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Improved error reporting in unittest.py
+- Fixed bug in constructor of simulate.Simulator.py that caused
+    TypeError: __init__() got an unexpected keyword argument 'directory'
+
+
+Version 1.1.0, July 26, 2012 -- Release 1.1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Added class buildingspy.io.postprocess.Plotter.
+  This simplifies the creation of boxplot and the
+  plotting of data that repeat every day.
+- Moved function buildingspy.development.unittest.Tester.__interpolate
+  to buildingspy.io.postprocess.Plotter.interpolate
+- Caught exception that is caused when non-ascii characters are
+  used in the comments of constants, parameters or variables. Now,
+  these files are excluded from the unit tests and a warning is issued.
+- Centralized error reporting to using buildings.io.reporter instead
+  of writing directly to stderr.
+- Fixed error in buildingspy.io.postprocess.Plotter.interpolate().
+  The previous version could lead to non-increasing time for
+  the last time stamp of the results, and then led to an wrong result
+  of the interpolation function.
+- Changed file output: The output of Dymola is now in the file dymola.log,
+  whereas unitTests.log contains the warning and error messages of the python
+  unit test scripts.
+- Changed buildingspy.development.unittest.py to achieve better load
+  balancing. This change reduced the computing time for all unit tests on a
+  24 core computer from 38 minutes to 21 minutes.
+
+Version 1.0.0, November 1, 2011
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Initial release.

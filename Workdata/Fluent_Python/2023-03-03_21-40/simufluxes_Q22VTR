@@ -1,0 +1,14 @@
+                          "Flux Report"
+
+        Total Heat Transfer Rate                  (w)
+-------------------------------- --------------------
+                           inlet          0.051391347
+                          outlet          0.070517041
+                       wall-back         -0.025315753
+                    wall-ceiling         -0.067687012
+                      wall-floor          0.064011066
+                      wall-front          -0.03169551
+                       wall-left         -0.030530652
+                      wall-right         -0.030530923
+                ---------------- --------------------
+                             Net        0.00015960391

@@ -1,0 +1,283 @@
+
+              Welcome to ANSYS Fluent 2020 R2
+
+              Copyright 1987-2020 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 29 2020 07:22:43 EDT  Build Id: 10176  
+ 
+
+*********************************************
+Info: Your license enables 4-way parallel execution.
+For faster simulations, please start the application with the appropriate parallel options.
+*********************************************
+
+Host spawning Node 0 on machine "wenzheshang" (win64).
+
+-------------------------------------------------------------------------------
+ID    Hostname     Core  O.S.         PID    Vendor                     
+-------------------------------------------------------------------------------
+n0    wenzheshang  1/12  Windows-x64  87904  Intel(R) Core(TM) i7-8750H 
+host  wenzheshang        Windows-x64  84836  Intel(R) Core(TM) i7-8750H 
+
+MPI Option Selected: intel
+-------------------------------------------------------------------------------
+
+Cleanup script file is f:\\Thinking\\program\\BELab1.0\\Workdata\\Fluent_Python\\2023-03-03_21-33\\cleanup-fluent-wenzheshang-84836.bat
+
+Opening wrapper library "F:\\ANASYS\\ANSYS Inc\\v202\\fluent/../commonfiles/AAS/bin/winx64/COWrapper.dll"...
+
+Done.
+Loading "F:/ANASYS/ANSYS Inc/v202/fluent/../commonfiles/AAS/bin/winx64/cowrapper.scm"
+Done.
+(define (aaslistener-func iter time-step) (display "<aaslistener> 
+") '() )aaslistener-func
+(define (aaslistener-func-freq) 1)aaslistener-func-freq
+(register-solution-monitor 'aaslistener-func aaslistener-func #f aaslistener-func-freq)monitor-lambdas
+(rpsetvar 'co-simulation/ior_ICoFluentUnit "IOR:010000002000000049444c3a4141535f434f5242412f49436f466c75656e74556e69743a312e3000020000000000000070000000010102000f0000003137322e32332e3139342e3138350000560500001b00000014010f005253543bf7016439b706000100000001000000020000000002000000000000000800000001005200004f41540100000018000000010000000100010001000000010001050901010000000000000000006c000000010102000c0000003139322e3136382e302e3100560500001b00000014010f005253543bf7016439b706000100000001000000020000000202000000000000000800000001000000004f41540100000018000000016c34ef0100010001000000010001050901010000000000")co-simulation/ior_icofluentunit
+(rp-var-define 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e3000020000000000000070000000010102000f0000003137322e32332e3139342e3138350000540500001b00000014010f005253543bf701643fb30600000000000100000001000000000200000000000000080000000101f646004f415401000000180000000101f6460100010001000000010001050901010000000000000000006c000000010102000c0000003139322e3136382e302e3100540500001b00000014010f005253543bf701643fb30600000000000100000001000000010200000000000000080000000101f646004f415401000000180000000101f6460100010001000000010001050901010000000000" 'string #f)co-simulation/ior_exceptionholder
+(rpsetvar 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e3000020000000000000070000000010102000f0000003137322e32332e3139342e3138350000540500001b00000014010f005253543bf701643fb30600000000000100000001000000000200000000000000080000000101f646004f415401000000180000000101f6460100010001000000010001050901010000000000000000006c000000010102000c0000003139322e3136382e302e3100540500001b00000014010f005253543bf701643fb30600000000000100000001000000010200000000000000080000000101f646004f415401000000180000000101f6460100010001000000010001050901010000000000")co-simulation/ior_exceptionholder
+
+> 
+Error: arg(2nd) out of range in string-ref
+Error Object: 0
+
+Reading "F:/Thinking/mesh/vadilation/roomesh.msh"...
+
+Buffering for file scan...
+
+   59319 nodes, binary.
+    9602 nodes, binary.
+  187200 quadrilateral interior faces, zone  1, binary.
+    1600 quadrilateral wall faces, zone  5, binary.
+    1600 quadrilateral wall faces, zone  6, binary.
+     160 quadrilateral velocity-inlet faces, zone  7, binary.
+     160 quadrilateral pressure-outlet faces, zone  8, binary.
+    1600 quadrilateral wall faces, zone  9, binary.
+    1600 quadrilateral wall faces, zone 10, binary.
+    1440 quadrilateral wall faces, zone 11, binary.
+    1440 quadrilateral wall faces, zone 12, binary.
+   64000 hexahedral cells, zone  4, binary.
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+     zones,
+	wall-front
+	wall-back
+	wall-left
+	wall-right
+	outlet
+	inlet
+	wall-floor
+	wall-ceiling
+	cell-fuild
+	interior-cell-fuild
+     parallel,
+Done.
+
+Preparing mesh for display...
+Done.
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/mesh/scale 0.01 0.01 0.01/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-front 0 no 0 no yes temperature no 283.15/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-back 0 no 0 no yes temperature no 283.15/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-left 0 no 0 no yes temperature no 283.15/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-right 0 no 0 no yes temperature no 283.15/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-ceiling 0 no 0 no yes temperature no 283.15/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-floor 0 no 0 no yes temperature no 303.15/define/boundary/zone-type outlet outflow/define/boundary/velocity-inlet (inlet)
+inlet no no yes yes no 0.8333333333333334 no 0 no 303.15 no no yes 5 10/solve/initialize/compute-defaults/all-zonessolve iterate 100
+Initialize using the hybrid initialization method.
+
+Checking case topology... 
+-This case has both inlets & outlets 
+-Pressure information is not available at the boundaries.
+ Case will be initialized with constant pressure
+
+	iter		scalar-0
+
+	1		1.000000e+00
+	2		1.017806e-05
+	3		9.829491e-07
+	4		9.823473e-08
+	5		9.221739e-09
+	6		9.920639e-10
+	7		1.119016e-10
+	8		1.311216e-11
+	9		1.569302e-12
+	10		1.936972e-13
+
+Hybrid initialization is done.
+<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+     1  1.0000e+00  1.3260e-02  1.3750e-02  2.8166e-04  1.0596e-04  8.5146e-01  7.4920e+03  0:01:39   99
+<aaslistener> 
+     2  4.2135e-01  1.0738e-02  8.4294e-03  4.2903e-04  1.3333e-04  6.3122e-02  7.2225e-02  0:01:38   98
+<aaslistener> 
+     3  6.1474e-01  1.7842e-02  1.2711e-02  6.9747e-04  1.9323e-04  8.0642e-02  1.0029e-01  0:01:56   97
+<aaslistener> 
+     4  7.2924e-01  2.0139e-02  1.2528e-02  7.5483e-04  1.9999e-04  5.0541e-02  9.3425e-02  0:01:51   96
+<aaslistener> 
+     5  6.4091e-01  1.6240e-02  9.2224e-03  7.0379e-04  1.4969e-04  2.2223e-02  6.7112e-02  0:01:47   95
+<aaslistener> 
+     6  5.3156e-01  1.1047e-02  6.4543e-03  6.4858e-04  9.9309e-05  1.3065e-02  3.5770e-02  0:01:44   94
+<aaslistener> 
+     7  3.9038e-01  7.3289e-03  4.7256e-03  6.0571e-04  7.3305e-05  1.0171e-02  1.3691e-02  0:01:41   93
+<aaslistener> 
+     8  2.9836e-01  5.1684e-03  3.5777e-03  5.4306e-04  5.6135e-05  7.9027e-03  8.0416e-03  0:01:38   92
+<aaslistener> 
+     9  2.4382e-01  3.6999e-03  2.7081e-03  4.5644e-04  4.3119e-05  5.7815e-03  6.5883e-03  0:01:36   91
+<aaslistener> 
+    10  1.9934e-01  2.6714e-03  2.0225e-03  3.6377e-04  3.4017e-05  4.0846e-03  5.5451e-03  0:01:34   90
+<aaslistener> 
+    11  1.5727e-01  1.9505e-03  1.4845e-03  2.7998e-04  2.4850e-05  2.8047e-03  4.3841e-03  0:01:32   89
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    12  1.2445e-01  1.4815e-03  1.0803e-03  2.0907e-04  1.7190e-05  1.8991e-03  3.2617e-03  0:01:30   88
+<aaslistener> 
+    13  9.9224e-02  1.1511e-03  7.9117e-04  1.5827e-04  1.1657e-05  1.2872e-03  2.3193e-03  0:01:11   87
+<aaslistener> 
+    14  7.8572e-02  9.1185e-04  5.9165e-04  1.2682e-04  7.9537e-06  9.0230e-04  1.6063e-03  0:01:14   86
+<aaslistener> 
+    15  6.1024e-02  7.3203e-04  4.5269e-04  1.0400e-04  5.5581e-06  6.6785e-04  1.1060e-03  0:01:15   85
+<aaslistener> 
+    16  4.7190e-02  5.9232e-04  3.5899e-04  8.7035e-05  4.0680e-06  5.1182e-04  7.8548e-04  0:01:16   84
+<aaslistener> 
+    17  3.6886e-02  4.7789e-04  2.9316e-04  7.3903e-05  3.1226e-06  4.0862e-04  5.8853e-04  0:01:17   83
+<aaslistener> 
+    18  2.9410e-02  3.8468e-04  2.4494e-04  6.3203e-05  2.4631e-06  3.3192e-04  4.6159e-04  0:01:17   82
+<aaslistener> 
+    19  2.3525e-02  3.0864e-04  2.0468e-04  5.4064e-05  1.9951e-06  2.7109e-04  3.7260e-04  0:01:17   81
+<aaslistener> 
+    20  1.8840e-02  2.4662e-04  1.7083e-04  4.6167e-05  1.6479e-06  2.2067e-04  3.0438e-04  0:01:17   80
+<aaslistener> 
+    21  1.5182e-02  1.9601e-04  1.4233e-04  3.9400e-05  1.3757e-06  1.7849e-04  2.4876e-04  0:01:17   79
+<aaslistener> 
+    22  1.2312e-02  1.5505e-04  1.1834e-04  3.3579e-05  1.1537e-06  1.4362e-04  2.0255e-04  0:01:16   78
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    23  1.0014e-02  1.2277e-04  9.7876e-05  2.8483e-05  9.6989e-07  1.1501e-04  1.6422e-04  0:01:16   77
+<aaslistener> 
+    24  8.1424e-03  9.7775e-05  8.0450e-05  2.3986e-05  8.1628e-07  9.1686e-05  1.3243e-04  0:01:15   76
+<aaslistener> 
+    25  6.6180e-03  7.8082e-05  6.5767e-05  2.0071e-05  6.8942e-07  7.2852e-05  1.0630e-04  0:01:14   75
+<aaslistener> 
+    26  5.3754e-03  6.2332e-05  5.3424e-05  1.6687e-05  5.8465e-07  5.7755e-05  8.5077e-05  0:01:13   74
+<aaslistener> 
+    27  4.3683e-03  4.9729e-05  4.3143e-05  1.3802e-05  4.9748e-07  4.5735e-05  6.8142e-05  0:01:12   73
+<aaslistener> 
+    28  3.5551e-03  3.9685e-05  3.4695e-05  1.1363e-05  4.2509e-07  3.6195e-05  5.4583e-05  0:01:12   72
+<aaslistener> 
+    29  2.8951e-03  3.1711e-05  2.7816e-05  9.3192e-06  3.6499e-07  2.8661e-05  4.3559e-05  0:01:11   71
+<aaslistener> 
+    30  2.3508e-03  2.5414e-05  2.2250e-05  7.6231e-06  3.1520e-07  2.2728e-05  3.4667e-05  0:01:10   70
+<aaslistener> 
+    31  1.9087e-03  2.0400e-05  1.7780e-05  6.2225e-06  2.6914e-07  1.7407e-05  2.6653e-05  0:01:09   69
+<aaslistener> 
+    32  1.5423e-03  1.6288e-05  1.4216e-05  5.1139e-06  2.3525e-07  1.3903e-05  2.1112e-05  0:00:54   68
+<aaslistener> 
+    33  1.2436e-03  1.3196e-05  1.1505e-05  4.2158e-06  2.0741e-07  1.1162e-05  1.6826e-05  0:00:56   67
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    34  1.0068e-03  1.0715e-05  9.3400e-06  3.4741e-06  1.8376e-07  9.0403e-06  1.3483e-05  0:00:57   66
+<aaslistener> 
+!   35 solution is converged
+    35  8.1769e-04  8.7082e-06  7.6079e-06  2.8628e-06  1.6327e-07  7.3503e-06  1.0826e-05  0:00:58   65
+/define/boundary/velocity-inlet (inlet)
+inlet no no yes yes no 0.8333333333333334 no 0 no 303.15 no no yes 5 10/solve/initialize/compute-defaults/all-zonessolve iterate 100<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+!   35 solution is converged
+    35  8.1769e-04  8.7082e-06  7.6079e-06  2.8628e-06  1.6327e-07  7.3503e-06  1.0826e-05  0:01:30  100
+<aaslistener> 
+!   36 solution is converged
+    36  6.6600e-04  7.0847e-06  6.2166e-06  2.3597e-06  1.4534e-07  5.9970e-06  8.7053e-06  0:01:31   99
+/define/boundary/velocity-inlet (inlet)
+inlet no no yes yes no 0.8333333333333334 no 0 no 303.15 no no yes 5 10/solve/initialize/compute-defaults/all-zonessolve iterate 100<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+!   36 solution is converged
+    36  6.6600e-04  7.0847e-06  6.2166e-06  2.3597e-06  1.4534e-07  5.9970e-06  8.7053e-06  0:01:32  100
+<aaslistener> 
+!   37 solution is converged
+    37  5.4387e-04  5.7702e-06  5.0939e-06  1.9454e-06  1.3094e-07  5.0809e-06  7.2325e-06  0:01:32   99
+/define/boundary/velocity-inlet (inlet)
+inlet no no yes yes no 0.8333333333333334 no 0 no 303.15 no no yes 5 10/solve/initialize/compute-defaults/all-zonessolve iterate 100<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+!   37 solution is converged
+    37  5.4387e-04  5.7702e-06  5.0939e-06  1.9454e-06  1.3094e-07  5.0809e-06  7.2325e-06  0:01:33  100
+<aaslistener> 
+!   38 solution is converged
+    38  4.4749e-04  4.7357e-06  4.1778e-06  1.5835e-06  1.1667e-07  4.1719e-06  5.8828e-06  0:01:34   99
+/define/boundary/velocity-inlet (inlet)
+inlet no no yes yes no 0.8333333333333334 no 0 no 303.15 no no yes 5 10/solve/initialize/compute-defaults/all-zonessolve iterate 100<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+!   38 solution is converged
+    38  4.4749e-04  4.7357e-06  4.1778e-06  1.5835e-06  1.1667e-07  4.1719e-06  5.8828e-06  0:01:35  100
+<aaslistener> 
+!   39 solution is converged
+    39  3.6922e-04  3.8432e-06  3.4096e-06  1.2887e-06  1.0277e-07  3.3207e-06  4.6355e-06  0:01:35   99
+/define/boundary/velocity-inlet (inlet)
+inlet no no yes yes no 0.8333333333333334 no 0 no 303.15 no no yes 5 10/solve/initialize/compute-defaults/all-zonessolve iterate 100<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+!   39 solution is converged
+    39  3.6922e-04  3.8432e-06  3.4096e-06  1.2887e-06  1.0277e-07  3.3207e-06  4.6355e-06  0:01:36  100
+<aaslistener> 
+!   40 solution is converged
+    40  3.0113e-04  3.1004e-06  2.7905e-06  1.0627e-06  9.1239e-08  2.7192e-06  3.7325e-06  0:01:36   99
+/define/boundary/velocity-inlet (inlet)
+inlet no no yes yes no 0.8333333333333334 no 0 no 303.15 no no yes 5 10/solve/initialize/compute-defaults/all-zonessolve iterate 100<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+!   40 solution is converged
+    40  3.0113e-04  3.1004e-06  2.7905e-06  1.0627e-06  9.1239e-08  2.7192e-06  3.7325e-06  0:01:37  100
+<aaslistener> 
+!   41 solution is converged
+    41  2.4508e-04  2.5326e-06  2.3010e-06  8.7723e-07  8.1651e-08  2.3039e-06  3.1145e-06  0:01:36   99
+/define/boundary/velocity-inlet (inlet)
+inlet no no yes yes no 0.8333333333333334 no 0 no 303.15 no no yes 5 10/solve/initialize/compute-defaults/all-zonessolve iterate 100<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+!   41 solution is converged
+    41  2.4508e-04  2.5326e-06  2.3010e-06  8.7723e-07  8.1651e-08  2.3039e-06  3.1145e-06  0:01:37  100
+<aaslistener> 
+!   42 solution is converged
+    42  2.0153e-04  2.0884e-06  1.8967e-06  7.1434e-07  7.2523e-08  1.9115e-06  2.5645e-06  0:01:37   99
+/define/boundary/velocity-inlet (inlet)
+inlet no no yes yes no 0.8333333333333334 no 0 no 303.15 no no yes 5 10/solve/initialize/compute-defaults/all-zonessolve iterate 100<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+!   42 solution is converged
+    42  2.0153e-04  2.0884e-06  1.8967e-06  7.1434e-07  7.2523e-08  1.9115e-06  2.5645e-06  0:01:38  100
+<aaslistener> 
+!   43 solution is converged
+    43  1.6629e-04  1.7067e-06  1.5543e-06  5.8155e-07  6.4263e-08  1.5820e-06  2.1023e-06  0:01:37   99
+/define/boundary/velocity-inlet (inlet)
+inlet no no yes yes no 0.8333333333333334 no 0 no 303.15 no no yes 5 10/solve/initialize/compute-defaults/all-zonessolve iterate 100<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+!   43 solution is converged
+    43  1.6629e-04  1.7067e-06  1.5543e-06  5.8155e-07  6.4263e-08  1.5820e-06  2.1023e-06  0:01:38  100
+<aaslistener> 
+!   44 solution is converged
+    44  1.3693e-04  1.3932e-06  1.2742e-06  4.7380e-07  5.6873e-08  1.3062e-06  1.7175e-06  0:01:18   99

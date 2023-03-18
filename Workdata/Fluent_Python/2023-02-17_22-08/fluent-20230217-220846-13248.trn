@@ -1,0 +1,200 @@
+
+              Welcome to ANSYS Fluent 2020 R2
+
+              Copyright 1987-2020 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 29 2020 07:22:43 EDT  Build Id: 10176  
+ 
+
+*********************************************
+Info: Your license enables 4-way parallel execution.
+For faster simulations, please start the application with the appropriate parallel options.
+*********************************************
+
+Host spawning Node 0 on machine "wenzheshang" (win64).
+
+-------------------------------------------------------------------------------
+ID    Hostname     Core  O.S.         PID    Vendor                     
+-------------------------------------------------------------------------------
+n0    wenzheshang  1/12  Windows-x64  15120  Intel(R) Core(TM) i7-8750H 
+host  wenzheshang        Windows-x64  6556   Intel(R) Core(TM) i7-8750H 
+
+MPI Option Selected: intel
+-------------------------------------------------------------------------------
+
+Cleanup script file is f:\\Thinking\\program\\BELab1.0\\Workdata\\Fluent_Python\\2023-02-17_22-08\\cleanup-fluent-wenzheshang-6556.bat
+
+Opening wrapper library "F:\\ANASYS\\ANSYS Inc\\v202\\fluent/../commonfiles/AAS/bin/winx64/COWrapper.dll"...
+
+Done.
+Loading "F:/ANASYS/ANSYS Inc/v202/fluent/../commonfiles/AAS/bin/winx64/cowrapper.scm"
+Done.
+(define (aaslistener-func iter time-step) (display "<aaslistener> 
+") '() )aaslistener-func
+(define (aaslistener-func-freq) 1)aaslistener-func-freq
+(register-solution-monitor 'aaslistener-func aaslistener-func #f aaslistener-func-freq)monitor-lambdas
+(rpsetvar 'co-simulation/ior_ICoFluentUnit "IOR:010000002000000049444c3a4141535f434f5242412f49436f466c75656e74556e69743a312e3000020000000000000070000000010102000f0000003137322e32332e3139342e313835000056f600001b00000014010f00525354848aef631e1f06000100000001000000020000000002000000000000000800000001000000004f41540100000018000000010000000100010001000000010001050901010000000000000000006c000000010102000b0000003137322e31372e302e31003156f600001b00000014010f00525354848aef631e1f06000100000001000000020000000202000000000000000800000001003a00004f41540100000018000000010052000100010001000000010001050901010000000000")co-simulation/ior_icofluentunit
+(rp-var-define 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e3000020000000000000070000000010102000f0000003137322e32332e3139342e313835000054f600001b00000014010f00525354848aef63121b0600000000000100000001000000000200000000000000080000000101600d004f415401000000180000000101600d0100010001000000010001050901010000000000000000006c000000010102000b0000003137322e31372e302e31003154f600001b00000014010f00525354848aef63121b0600000000000100000001000000010200000000000000080000000101600d004f415401000000180000000101600d0100010001000000010001050901010000000000" 'string #f)co-simulation/ior_exceptionholder
+(rpsetvar 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e3000020000000000000070000000010102000f0000003137322e32332e3139342e313835000054f600001b00000014010f00525354848aef63121b0600000000000100000001000000000200000000000000080000000101600d004f415401000000180000000101600d0100010001000000010001050901010000000000000000006c000000010102000b0000003137322e31372e302e31003154f600001b00000014010f00525354848aef63121b0600000000000100000001000000010200000000000000080000000101600d004f415401000000180000000101600d0100010001000000010001050901010000000000")co-simulation/ior_exceptionholder
+
+> 
+Reading "F:/Thinking/mesh/vadilation/roomesh.msh"...
+
+Buffering for file scan...
+
+   59319 nodes, binary.
+    9602 nodes, binary.
+  187200 quadrilateral interior faces, zone  1, binary.
+    1600 quadrilateral wall faces, zone  5, binary.
+    1600 quadrilateral wall faces, zone  6, binary.
+     160 quadrilateral velocity-inlet faces, zone  7, binary.
+     160 quadrilateral pressure-outlet faces, zone  8, binary.
+    1600 quadrilateral wall faces, zone  9, binary.
+    1600 quadrilateral wall faces, zone 10, binary.
+    1440 quadrilateral wall faces, zone 11, binary.
+    1440 quadrilateral wall faces, zone 12, binary.
+   64000 hexahedral cells, zone  4, binary.
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+     zones,
+	wall-front
+	wall-back
+	wall-left
+	wall-right
+	outlet
+	inlet
+	wall-floor
+	wall-ceiling
+	cell-fuild
+	interior-cell-fuild
+     parallel,
+Done.
+
+Preparing mesh for display...
+Done.
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-front 0 no 0 no yes temperature no 283.15/define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-front 0 no 0 no yes temperature no 283.15/define/boundary/outflow invalid command [outflow]
+outlet
+adjoint/                mesh/                   solve/
+define/                 parallel/               surface/
+display/                plot/                   views/
+exit                    preferences/
+file/                   report/
+
+> define
+
+/define> 
+beta-feature-access                             operating-conditions/
+boundary-conditions/                            overset-interfaces/
+custom-field-functions/                         parameters/
+dynamic-mesh/                                   profiles/
+enable-mesh-morpher-optimizer?                  reference-frames/
+injections/                                     set-unit-system
+materials/                                      solution-strategy/
+mesh-interfaces/                                turbo-model/
+mixing-planes/                                  units
+models/                                         user-defined/
+named-expressions/
+
+/define> boundary
+
+/define/boundary-conditions> 
+bc-settings/                                    set/
+copy-bc                                         target-mass-flow-rate-settings/
+fluid                                           velocity-inlet
+list-zones                                      wall
+modify-zones/                                   zone-name
+non-reflecting-bc/                              zone-type
+pressure-outlet
+
+/define/boundary-conditions> out-flow
+invalid command [out-flow]
+
+/define/boundary-conditions> outflow
+invalid command [outflow]
+
+/define/boundary-conditions> (cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Boundary Conditions|Outlet|outlet (pressure-outlet, id=8)"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Boundary Conditions|Outlet|outlet (pressure-outlet, id=8)"))
+(cx-gui-do cx-list-tree-right-click "NavigationPane*List_Tree1" )
+outlet
+invalid command [outlet]
+
+/define/boundary-conditions> outflow
+invalid command [outflow]
+
+/define/boundary-conditions> (cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Boundary Conditions|Outlet"))
+(cx-gui-do cx-list-tree-right-click "NavigationPane*List_Tree1" )
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Boundary Conditions|Outlet|outlet (pressure-outlet, id=8)"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Boundary Conditions|Outlet|outlet (pressure-outlet, id=8)"))
+(cx-gui-do cx-list-tree-right-click "NavigationPane*List_Tree1" )
+(cx-gui-do cx-activate-item "MenuBar*TypeSubMenu*outflow")
+outflow
+(outlet)
+zone id/name [outlet] outlet
+Flow rate weighting [1] 1
+
+/define/boundary-conditions> 
+bc-settings/                                    set/
+copy-bc                                         target-mass-flow-rate-settings/
+fluid                                           velocity-inlet
+list-zones                                      wall
+modify-zones/                                   zone-name
+non-reflecting-bc/                              zone-type
+outflow
+
+/define/boundary-conditions> define
+invalid command [define]
+
+/define/boundary-conditions> /define
+
+/define/boundary-conditions//define> /define/boundary/wall (wall-ceiling wall-floor wall-right wall-left wall-back wall-front)
+wall-floor 0 no 0 no yes temperature no 303.15(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Boundary Conditions|Outlet|outlet (outflow, id=8)"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=7)"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Boundary Conditions|Inlet|inlet (velocity-inlet, id=7)"))
+(cx-gui-do cx-list-tree-right-click "NavigationPane*List_Tree1" )
+(cx-gui-do cx-activate-item "MenuBar*TypeSubMenu*inlet-vent")
+(cx-gui-do cx-activate-tab-index "Inlet Vent*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Inlet Vent*Frame2*Frame2" 1)
+(cx-gui-do cx-activate-tab-index "Inlet Vent*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Inlet Vent*Frame2*Frame2" 2)
+(cx-gui-do cx-activate-tab-index "Inlet Vent*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Inlet Vent*Frame2*Frame2" 3)
+(cx-gui-do cx-activate-tab-index "Inlet Vent*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Inlet Vent*Frame2*Frame2" 4)
+(cx-gui-do cx-activate-tab-index "Inlet Vent*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Inlet Vent*Frame2*Frame2" 5)
+(cx-gui-do cx-activate-tab-index "Inlet Vent*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Inlet Vent*Frame2*Frame2" 6)
+(cx-gui-do cx-activate-tab-index "Inlet Vent*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Inlet Vent*Frame2*Frame2" 7)
+(cx-gui-do cx-activate-tab-index "Inlet Vent*Frame2*Frame2" 0)
+(cx-gui-do cx-enable-apply-button "Inlet Vent")
+(cx-gui-do cx-activate-item "Inlet Vent*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Boundary Conditions|Inlet|inlet (inlet-vent, id=7)"))
+(cx-gui-do cx-list-tree-right-click "NavigationPane*List_Tree1" )
+(cx-gui-do cx-activate-item "MenuBar*TypeSubMenu*velocity-inlet")
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 1)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 2)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 3)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 4)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 5)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 6)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 7)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 1)
+(cx-gui-do cx-activate-item "Velocity Inlet*PanelButtons*PushButton2(Cancel)")

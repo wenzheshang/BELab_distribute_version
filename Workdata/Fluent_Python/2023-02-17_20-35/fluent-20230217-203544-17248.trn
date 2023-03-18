@@ -1,0 +1,337 @@
+
+              Welcome to ANSYS Fluent 2020 R2
+
+              Copyright 1987-2020 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 29 2020 07:22:43 EDT  Build Id: 10176  
+ 
+
+*********************************************
+Info: Your license enables 4-way parallel execution.
+For faster simulations, please start the application with the appropriate parallel options.
+*********************************************
+
+Host spawning Node 0 on machine "wenzheshang" (win64).
+
+-------------------------------------------------------------------------------
+ID    Hostname     Core  O.S.         PID    Vendor                     
+-------------------------------------------------------------------------------
+n0    wenzheshang  1/12  Windows-x64  5408   Intel(R) Core(TM) i7-8750H 
+host  wenzheshang        Windows-x64  13336  Intel(R) Core(TM) i7-8750H 
+
+MPI Option Selected: intel
+-------------------------------------------------------------------------------
+
+Cleanup script file is f:\\Thinking\\program\\BELab1.0\\Workdata\\Fluent_Python\\2023-02-17_20-35\\cleanup-fluent-wenzheshang-13336.bat
+
+Opening wrapper library "F:\\ANASYS\\ANSYS Inc\\v202\\fluent/../commonfiles/AAS/bin/winx64/COWrapper.dll"...
+
+Done.
+Loading "F:/ANASYS/ANSYS Inc/v202/fluent/../commonfiles/AAS/bin/winx64/cowrapper.scm"
+Done.
+(define (aaslistener-func iter time-step) (display "<aaslistener> 
+") '() )aaslistener-func
+(define (aaslistener-func-freq) 1)aaslistener-func-freq
+(register-solution-monitor 'aaslistener-func aaslistener-func #f aaslistener-func-freq)monitor-lambdas
+(rpsetvar 'co-simulation/ior_ICoFluentUnit "IOR:010000002000000049444c3a4141535f434f5242412f49436f466c75656e74556e69743a312e3000020000000000000070000000010102000f0000003137322e32332e3139342e3138350080b9c000001b00000014010f00525354b674ef63b0c206000100000001000000020000000002000000000000000800000001003a00004f4154010000001800000001003a000100010001000000010001050901010000000000000000006c000000010102000b0000003137322e31372e302e310031b9c000801b00000014010f00525354b674ef63b0c206000100000001000000020000000202000000000000000800000001003a00004f4154010000001800000001003a000100010001000000010001050901010000000000")co-simulation/ior_icofluentunit
+(rp-var-define 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e3000020000000000000070000000010102000f0000003137322e32332e3139342e3138350000b7c000001b00000014010f00525354b674ef63c8be060000000000010000000100000000020000000000000008000000010137d4004f41540100000018000000010137d40100010001000000010001050901010000000000000000006c000000010102000b0000003137322e31372e302e310031b7c000001b00000014010f00525354b674ef63c8be060000000000010000000100000001020000000000000008000000010137d4004f41540100000018000000010137d40100010001000000010001050901010000000000" 'string #f)co-simulation/ior_exceptionholder
+(rpsetvar 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e3000020000000000000070000000010102000f0000003137322e32332e3139342e3138350000b7c000001b00000014010f00525354b674ef63c8be060000000000010000000100000000020000000000000008000000010137d4004f41540100000018000000010137d40100010001000000010001050901010000000000000000006c000000010102000b0000003137322e31372e302e310031b7c000001b00000014010f00525354b674ef63c8be060000000000010000000100000001020000000000000008000000010137d4004f41540100000018000000010137d40100010001000000010001050901010000000000")co-simulation/ior_exceptionholder
+
+> 
+Reading "F:/Thinking/mesh/vadilation/roomesh.msh"...
+
+Buffering for file scan...
+
+   59319 nodes, binary.
+    9602 nodes, binary.
+  187200 quadrilateral interior faces, zone  1, binary.
+    1600 quadrilateral wall faces, zone  5, binary.
+    1600 quadrilateral wall faces, zone  6, binary.
+     160 quadrilateral velocity-inlet faces, zone  7, binary.
+     160 quadrilateral pressure-outlet faces, zone  8, binary.
+    1600 quadrilateral wall faces, zone  9, binary.
+    1600 quadrilateral wall faces, zone 10, binary.
+    1440 quadrilateral wall faces, zone 11, binary.
+    1440 quadrilateral wall faces, zone 12, binary.
+   64000 hexahedral cells, zone  4, binary.
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+     zones,
+	wall-front
+	wall-back
+	wall-left
+	wall-right
+	outlet
+	inlet
+	floor
+	ceiling
+	cell-fuild
+	interior-cell-fuild
+     parallel,
+Done.
+
+Preparing mesh for display...
+Done.
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/wallwall-front invalid command [wallwall-front]
+0 no 0 no yes temperature no 283.15/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/wallwall-back invalid command [wallwall-back]
+0 no 0 no yes temperature no 283.15/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/wallwall-left invalid command [wallwall-left]
+0 no 0 no yes temperature no 283.15/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/wallwall-right invalid command [wallwall-right]
+0 no 0 no yes temperature no 283.15/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/outflowoutletinvalid command [outflowoutlet]
+/solve/initialize/compute-defaults/all-zonessolve iterate 1000
+Initialize using the hybrid initialization method.
+
+Checking case topology... 
+-This case has both inlets & outlets 
+-Pressure information is not available at the boundaries.
+ Case will be initialized with constant pressure
+
+	iter		scalar-0
+
+	1		0.000000e+00
+	2		0.000000e+00
+	3		0.000000e+00
+	4		0.000000e+00
+	5		0.000000e+00
+	6		0.000000e+00
+	7		0.000000e+00
+	8		0.000000e+00
+	9		0.000000e+00
+	10		0.000000e+00
+
+Hybrid initialization is done.
+<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+        Negative k in 15956 cells after linear solve.
+        All neighbors negative on 86 cells.
+<aaslistener> 
+!    1 solution is converged
+     1  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:49:57  999
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/outflowoutletinvalid command [outflowoutlet]
+/solve/initialize/compute-defaults/all-zonessolve iterate 1000<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+!    1 solution is converged
+     1  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:50:00 1000
+
+ Reversed flow on 86 faces (53.7% area) of pressure-outlet 8.
+<aaslistener> 
+!    2 solution is converged
+     2  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:46:37  999
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/outflowoutletinvalid command [outflowoutlet]
+/solve/initialize/compute-defaults/all-zonessolve iterate 1000<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+!    2 solution is converged
+     2  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:46:40 1000
+
+ Reversed flow on 86 faces (53.7% area) of pressure-outlet 8.
+<aaslistener> 
+!    3 solution is converged
+     3  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:43:57  999
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/outflowoutletinvalid command [outflowoutlet]
+/solve/initialize/compute-defaults/all-zonessolve iterate 1000<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+!    3 solution is converged
+     3  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:44:00 1000
+
+ Reversed flow on 89 faces (55.6% area) of pressure-outlet 8.
+<aaslistener> 
+!    4 solution is converged
+     4  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:41:49  999
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/outflowoutletinvalid command [outflowoutlet]
+/solve/initialize/compute-defaults/all-zonessolve iterate 1000<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+!    4 solution is converged
+     4  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:41:52 1000
+
+ Reversed flow on 105 faces (65.6% area) of pressure-outlet 8.
+<aaslistener> 
+!    5 solution is converged
+     5  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:43:27  999
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/boundary/outflowoutletinvalid command [outflowoutlet]
+/solve/initialize/compute-defaults/all-zonessolve iterate 1000<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+!    5 solution is converged
+     5  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  0:43:30 1000
+
+ Reversed flow on 83 faces (51.9% area) of pressure-outlet 8.
+<aaslistener> 
+     6  3.5133e-01  3.8150e-02  7.3479e-03  7.3002e-03  1.4157e-16  3.8577e-02  1.6760e-02  0:41:25  999
+
+ Reversed flow on 60 faces (37.5% area) of pressure-outlet 8.
+<aaslistener> 
+     7  2.4972e-01  5.5552e-02  1.2764e-02  8.0889e-03  1.4268e-16  3.7218e-02  1.1716e-02  0:43:05  998
+
+ Reversed flow on 100 faces (62.5% area) of pressure-outlet 8.
+<aaslistener> 
+     8  1.7862e-01  1.7008e-01  4.1135e-02  1.6810e-02  1.4198e-16  3.5958e-02  8.7805e-03  0:41:05  997
+
+ Reversed flow on 101 faces (63.1% area) of pressure-outlet 8.
+<aaslistener> 
+     9  1.2578e-01  5.3986e-02  2.1800e-02  6.8728e-03  1.4294e-16  3.4315e-02  7.0682e-03  0:42:47  996
+
+ Reversed flow on 105 faces (65.6% area) of pressure-outlet 8.
+<aaslistener> 
+    10  8.3689e-02  4.0674e-02  1.7218e-02  5.1592e-03  1.4165e-16  3.1700e-02  5.7895e-03  0:40:50  995
+
+ Reversed flow on 106 faces (66.3% area) of pressure-outlet 8.
+<aaslistener> 
+    11  5.5719e-02  4.3882e-02  1.8665e-02  5.6819e-03  1.4474e-16  2.7781e-02  5.4359e-03  0:42:34  994
+
+ Reversed flow on 106 faces (66.3% area) of pressure-outlet 8.
+<aaslistener> 
+    12  3.7485e-02  4.8423e-02  2.1821e-02  6.1028e-03  1.4191e-16  2.0940e-02  5.2185e-03  0:40:39  993
+
+ Reversed flow on 106 faces (66.3% area) of pressure-outlet 8.
+<aaslistener> 
+    13  2.5455e-02  4.9237e-02  2.1834e-02  5.8659e-03  1.4202e-16  1.1621e-02  5.0279e-03  0:39:06  992
+
+ Reversed flow on 106 faces (66.3% area) of pressure-outlet 8.
+<aaslistener> 
+    14  1.7452e-02  4.7312e-02  2.0029e-02  5.1657e-03  1.4167e-16  4.7203e-03  4.8511e-03  0:37:51  991
+
+ Reversed flow on 106 faces (66.3% area) of pressure-outlet 8.
+<aaslistener> 
+    15  1.1971e-02  4.3581e-02  1.7672e-02  4.4556e-03  1.4474e-16  2.0198e-03  4.6877e-03  0:40:09  990
+
+ Reversed flow on 106 faces (66.3% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    16  8.2239e-03  3.9887e-02  1.5937e-02  4.1177e-03  1.4245e-16  8.3180e-04  4.4656e-03  0:38:41  989
+
+ Reversed flow on 106 faces (66.3% area) of pressure-outlet 8.
+<aaslistener> 
+    17  5.7227e-03  3.6716e-02  1.5324e-02  3.8549e-03  1.4140e-16  3.1770e-04  4.1828e-03  0:37:30  988
+
+ Reversed flow on 107 faces (66.9% area) of pressure-outlet 8.
+<aaslistener> 
+    18  3.9243e-03  3.4112e-02  1.3605e-02  3.2472e-03  1.4208e-16  1.1537e-04  3.8593e-03  0:39:50  987
+
+ Reversed flow on 88 faces (55.0% area) of pressure-outlet 8.
+<aaslistener> 
+    19  2.7016e-03  3.4523e-02  1.1900e-02  2.8740e-03  1.4245e-16  4.1231e-05  3.4805e-03  0:38:25  986
+
+ Reversed flow on 81 faces (50.6% area) of pressure-outlet 8.
+<aaslistener> 
+    20  1.9122e-03  4.0694e-02  1.4742e-02  3.1428e-03  1.4200e-16  1.4434e-05  3.2942e-03  0:40:33  985
+
+ Reversed flow on 90 faces (56.2% area) of pressure-outlet 8.
+<aaslistener> 
+    21  1.3985e-03  3.7930e-02  1.6394e-02  3.0405e-03  1.4302e-16  5.5399e-06  3.2018e-03  0:38:58  984
+
+ Reversed flow on 89 faces (55.6% area) of pressure-outlet 8.
+<aaslistener> 
+    22  1.0907e-03  1.7398e-02  9.2549e-03  3.6306e-03  1.4315e-16  3.4320e-06  3.2754e-03  0:37:42  983
+
+ Reversed flow on 89 faces (55.6% area) of pressure-outlet 8.
+<aaslistener> 
+    23  7.1558e-04  1.2200e-02  6.0227e-03  2.1206e-03  1.4189e-16  2.7550e-06  3.3343e-03  0:36:40  982
+
+ Reversed flow on 80 faces (50.0% area) of pressure-outlet 8.
+<aaslistener> 
+    24  4.6729e-04  1.0919e-02  4.5387e-03  1.3556e-03  1.4510e-16  2.2280e-06  3.3616e-03  0:35:51  981
+
+ Reversed flow on 80 faces (50.0% area) of pressure-outlet 8.
+<aaslistener> 
+    25  3.4548e-04  9.1907e-03  3.8577e-03  1.3030e-03  1.4317e-16  1.7965e-06  3.3752e-03  0:38:27  980
+
+ Reversed flow on 80 faces (50.0% area) of pressure-outlet 8.
+<aaslistener> 
+    26  2.4618e-04  6.6734e-03  3.1670e-03  1.1686e-03  1.4280e-16  1.4487e-06  3.4042e-03  0:37:15  979
+
+ Reversed flow on 80 faces (50.0% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    27  8.6399e-04  1.2817e-02  1.7102e-02  9.3674e-03  1.4226e-16  1.1558e-06  3.4880e-03  0:36:18  978
+
+ Reversed flow on 80 faces (50.0% area) of pressure-outlet 8.
+<aaslistener> 
+    28  1.2320e-03  1.8797e-02  9.4383e-03  1.6421e-02  1.4059e-16  9.3569e-07  3.7311e-03  0:35:31  977
+
+ Reversed flow on 80 faces (50.0% area) of pressure-outlet 8.
+<aaslistener> 
+    29  1.9357e-03  1.8888e-02  2.2220e-02  1.7017e-02  1.4110e-16  7.5322e-07  4.3180e-03  0:34:54  976
+
+ Reversed flow on 80 faces (50.0% area) of pressure-outlet 8.
+<aaslistener> 
+    30  1.3617e-03  7.8413e-03  9.0540e-03  7.0618e-03  1.4241e-16  6.4360e-07  5.6240e-03  0:34:23  975
+
+ Reversed flow on 44 faces (27.5% area) of pressure-outlet 8.
+<aaslistener> 
+    31  3.9119e-03  3.4311e-02  3.3676e-02  2.8438e-02  1.4557e-16  5.5331e-07  8.1552e-03  0:37:13  974
+
+ Reversed flow on 66 faces (41.3% area) of pressure-outlet 8.
+<aaslistener> 
+    32  2.9547e-03  1.0611e-02  9.7736e-03  1.1126e-02  1.4223e-16  4.2942e-07  1.1269e-02  0:36:14  973
+
+ Reversed flow on 80 faces (50.0% area) of pressure-outlet 8.
+<aaslistener> 
+    33  1.4943e-03  8.6734e-03  7.9268e-03  8.9137e-03  1.4247e-16  3.5378e-07  1.4058e-02  0:35:26  972
+
+ Reversed flow on 80 faces (50.0% area) of pressure-outlet 8.
+<aaslistener> 
+    34  7.9916e-04  6.7240e-03  6.0679e-03  7.0318e-03  1.4245e-16  2.9132e-07  1.6260e-02  0:34:48  971
+
+ Reversed flow on 80 faces (50.0% area) of pressure-outlet 8.
+<aaslistener> 
+    35  4.8366e-04  5.4735e-03  4.7702e-03  5.3935e-03  1.4355e-16  2.4290e-07  1.7416e-02  0:40:44  970
+
+ Reversed flow on 80 faces (50.0% area) of pressure-outlet 8.
+<aaslistener> 
+    36  3.0035e-04  4.1139e-03  3.3902e-03  3.6777e-03  1.4176e-16  2.6799e-07  1.7684e-02  0:39:01  969
+
+ Reversed flow on 98 faces (61.2% area) of pressure-outlet 8.
+<aaslistener> 
+    37  2.4943e-03  2.4222e-02  1.7141e-02  2.2544e-02  1.4289e-16  2.7363e-07  1.7620e-02  0:40:52  968
+
+ Reversed flow on 98 faces (61.2% area) of pressure-outlet 8.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    38  3.2273e-03  9.8205e-03  1.1744e-02  9.4268e-03  1.4184e-16  2.0314e-07  1.7430e-02  0:45:33  967
+
+ Reversed flow on 80 faces (50.0% area) of pressure-outlet 8.
+<aaslistener> 
+    39  2.9002e-03  7.3978e-03  9.4137e-03  7.0844e-03  1.4349e-16  1.7982e-06  1.3029e-02  0:46:04  966
+<aaslistener> 
+    40  1.6497e-02  2.6031e-02  1.7938e-02  2.5038e-02  1.4301e-16  1.7307e-06  1.2407e-02  0:46:28  965
+
+ Reversed flow on 56 faces (35.0% area) of pressure-outlet 8.
+<aaslistener> 
+    41  1.1851e-02  2.3650e-02  1.6394e-02  2.0488e-02  1.4165e-16  8.2546e-07  1.2540e-02  0:43:33  964
+
+ Reversed flow on 84 faces (52.5% area) of pressure-outlet 8.
+<aaslistener> 
+    42  6.3839e-03  1.8848e-02  1.3635e-02  1.6304e-02  1.4076e-16  4.8213e-07  1.3098e-02  0:41:14  963
+
+ Reversed flow on 84 faces (52.5% area) of pressure-outlet 8.
+<aaslistener> 
+    43  3.4768e-03  1.5606e-02  1.1693e-02  1.3110e-02  1.4338e-16  3.0661e-07  1.3788e-02  0:42:34  962
+
+ Reversed flow on 74 faces (46.3% area) of pressure-outlet 8.
+<aaslistener> 
+    44  1.9291e-03  1.6080e-02  1.0438e-02  1.0934e-02  1.4420e-16  2.7122e-07  1.4461e-02  0:40:26  961
+
+ Reversed flow on 79 faces (49.4% area) of pressure-outlet 8.
+<aaslistener> 
+    45  1.7144e-03  1.5857e-02  1.1973e-02  8.6036e-03  1.4294e-16  1.0976e-06  1.2071e-02  0:38:42  960
+<aaslistener> 
+    46  1.8176e-02  3.3464e-02  3.0094e-02  2.1925e-02  1.4314e-16  7.9534e-07  1.2509e-02  0:37:20  959

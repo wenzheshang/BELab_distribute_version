@@ -1,0 +1,9 @@
+echo off
+set LOCALHOST=%COMPUTERNAME%
+set KILL_CMD="F:\ANASYS\ANSYS Inc\v202\fluent/ntbin/win64/winkill.exe"
+
+"F:\ANASYS\ANSYS Inc\v202\fluent\ntbin\win64\tell.exe" wenzheshang 1415 CLEANUP_EXITING
+if /i "%LOCALHOST%"=="wenzheshang" (%KILL_CMD% 85372) 
+if /i "%LOCALHOST%"=="wenzheshang" (%KILL_CMD% 94408) 
+if /i "%LOCALHOST%"=="wenzheshang" (%KILL_CMD% 102960)
+del "f:\Thinking\program\BELab1.0\Workdata\Fluent_Python\2023-03-05_15-17\cleanup-fluent-wenzheshang-94408.bat"
