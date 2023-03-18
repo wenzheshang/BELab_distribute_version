@@ -34,19 +34,19 @@ The typical work flow of BELab is below:
 >    For EXE version, you should open the .exe file. For source code version, you should run main_code.py in a Python IDE.
 
 *    Second load the .fmu file and .msh file from the UI.
->    ![Load files](https://github.com/wenzheshang/BELab_distribute_version/tree/main/image_for_readme/load_file.png)
+>    ![Load files](https://github.com/wenzheshang/BELab_distribute_version/blob/main/image_for_readme/load_file.png)
 
 *    Then set basic parameter for the two models
->    ![Set parameter](https://github.com/wenzheshang/BELab_distribute_version/tree/main/image_for_readme/set_parameter.png)
+>    ![Set parameter](https://github.com/wenzheshang/BELab_distribute_version/blob/main/image_for_readme/set_parameter.png)
 >    **Notice**: The name of parameters should be set obey some specific rules. different name of room temperature in multi room should be set as "fixedTemperature1", "fixedTemperature2"...the orifices' name should be "ori1", "ori2"...the name of inlet should be "inlet", outlet should be "outlet", the walls should set as "wall_left", "wall_right", "wall_ceiling", "wall_floor", "wall_back", "wall_front". You can modify the source code to make it adapt to your problem.
 >    **Notice**: In this version, The CFD could only receive the inlet velocity, temperature and outlet velocity data from Modelica. And if you want to give data to CFD from Modelica, please remain the variable you want to exchange(inlet or outlet) in the select box. Generally, for the positive pressure room, you should remain "inlet" in your select box, for the negative pressure room the "outlet" should be remain and the "switch negative pressure room" should be checked.
 
 *    Then set the variables that would be exchanged between Modelica and CFD
->    ![Exchange data](https://github.com/wenzheshang/BELab_distribute_version/tree/main/image_for_readme/exchange_variable.png)
+>    ![Exchange data](https://github.com/wenzheshang/BELab_distribute_version/blob/main/image_for_readme/exchange_variable.png)
 >    **Notice**: The exchange variables' name from .fmu file should just be the variables' name in Modelica language, such as "SupplyAir.T". And the order of variables is very important, for example, if you want to send the data of "SupplyAir.T" from Modelica to "inlet.T" in Fluent, you have to write "SupplyAir.T inlet.T" in the Modelica side. The same thing is also true in the CFD side. And if there are many groups of exchange data, you should use ";" to split different group.
 
 *    Then set time parameter in Modelica side
->    ![Time parameter](https://github.com/wenzheshang/BELab_distribute_version/tree/main/image_for_readme/set_time.png)
+>    ![Time parameter](https://github.com/wenzheshang/BELab_distribute_version/blob/main/image_for_readme/set_time.png)
 >    You should identify the simulate time and the interval of data exchange.
 
 *    Finally cilck "Start Co-Simu" button and wait.
@@ -54,7 +54,7 @@ The typical work flow of BELab is below:
 
 ## Result
 Here are some results for the BELab:
-![Result1](https://github.com/wenzheshang/BELab_distribute_version/tree/main/image_for_readme/result1.png)
+![Result1](https://github.com/wenzheshang/BELab_distribute_version/blob/main/image_for_readme/result1.png)
 This is the result of coupling supply air velocity and temperature.
-![Result2](https://github.com/wenzheshang/BELab_distribute_version/tree/main/image_for_readme/result2.png)
+![Result2](https://github.com/wenzheshang/BELab_distribute_version/blob/main/image_for_readme/result2.png)
 This is the result of coupling pressure difference between multi-zones.# BELab_distribute_version
