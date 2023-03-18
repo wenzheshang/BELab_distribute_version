@@ -452,7 +452,7 @@ class Win(QWidget,Ui_Form):
             EXD['MF'] = MF
 
         def FMU_simulate(fmu_file, end_time, communicate_time, set_variable, set_value):
-             
+            self.multi_result_path_label.setText('Start Simu')
             Tstart = 0 # The start time.
             Tend = end_time
             
@@ -482,14 +482,18 @@ class Win(QWidget,Ui_Form):
             
             # Values for the solution
             # Retrieve the valureferences for the values 'CFD_roo.Room_MeanT'
-            MFKey = list(EXD['MF'])
-            FMKey = list(EXD['FM'])
-            var1 = MFKey[0].split()[0]
-            var2 = FMKey[0].split()[1]
-            vref = [model.get_variable_valueref(var1)]+ \
-                    [model.get_variable_valueref(var2)]
-            t_sol = [Tstart]
-            sol = [model.get_real(vref)]
+            try:
+                MFKey = list(EXD['MF'])
+                FMKey = list(EXD['FM'])
+                var1 = MFKey[0].split()[0]
+                var2 = FMKey[0].split()[1]
+                vref = [model.get_variable_valueref(var1)]+ \
+                        [model.get_variable_valueref(var2)]
+                t_sol = [Tstart]
+                sol = [model.get_real(vref)]
+            except:
+                self.multi_result_path_label.setText('Name Error')
+                return
 
             time = Tstart
             Tnext = Tend # Used for time events
@@ -523,7 +527,11 @@ class Win(QWidget,Ui_Form):
                 model.continuous_states = x
 
                 # Get the event indicators at t = time
-                event_ind_new = model.get_event_indicators()
+                try:
+                    event_ind_new = model.get_event_indicators()
+                except:
+                    self.multi_result_path_label.setText('Step Number Error')
+                    return
                 
                 # Inform the model about an accepted step and check for step events
                 step_event = model.completed_integrator_step()
@@ -612,8 +620,8 @@ class Win(QWidget,Ui_Form):
             plt.plot(t_sol,np.array(sol)[:,0])
             plt.subplot(212)
             plt.plot(t_sol,np.array(sol)[:,1])
-            plt.savefig('FMU/FMU_result.svg')
-            image = QImage('FMU/FMU_result.svg')
+            plt.savefig(os.path.join(dir_result, 'FMU_result.svg'))
+            image = QImage(os.path.join(dir_result, 'FMU_result.svg'))
             self.Reslut_label.setPixmap(QPixmap.fromImage(image))
             self.Reslut_label.setScaledContents(True)
 
